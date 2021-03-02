@@ -1,16 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WFH</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
+
     {% for tip in tips %}
-        {{ tip.tip_suggestion }}
-        {{ tip.category_name }}
+        {{ tip.tip_suggestion }}<br>
+        {{ tip.category_name }}<br>
         {{ tip.tip_details }}
     {% endfor %}
-    
-</body>
-</html>
+
+{% endblock %}
