@@ -5,12 +5,12 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12 text-center">
-            <h3>We are delighted you are joining our remote community!</h3>
+            <h3>Please log in below</h3>
         </div>
     </div>
     <div class="row justify-content-center">
         <div class="col-12 col-md-6 text-center">
-            <form method="POST" action="{{ url_for('sign_up') }}">
+            <form method="POST" action="{{ url_for('log_in') }}">
                 <div class="mb-3">
                     <label for="username" class="form-label">Username</label>
                     <input type="text" class="form-control" id="username" placceholder="username" 
@@ -21,15 +21,15 @@
                     <input type="password" class="form-control" id="password" placeholder="password"
                     name="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
                 </div>
-                <button type="submit" class="btn btn-primary" id="sign-up-btn">Sign Up</button>
+                <button type="submit" class="btn btn-primary" id="log-in-btn">Log In</button>
             </form>
         </div>
     </div>
 </div>
 <div class="col-12 col-md-6 justify-content-center">
         <div>
-            <h4 class="smaller-heading">Already have an account with us?</h4>
-            <a class="btn" id="redirect-signin-btn" href="{{ url_for('log_in') }}">Sign In</a>
+            <h4 class="smaller-heading">Don't have an account with us yet?</h4>
+            <a class="btn" id="redirect-signin-btn" href="{{ url_for('sign_up') }}">Sign Up</a>
         </div>
 </div>
 {% endblock %}  
