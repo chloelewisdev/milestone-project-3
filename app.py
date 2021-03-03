@@ -78,8 +78,19 @@ def tips():
     return render_template("tips.html", tips=tips)
 
 
-@app.route("/add_tip")
+@app.route("/addtip", methods=["GET", "POST"])
 def add_tip():
+    if request.method == "POST":
+        tip = {
+            "category_name": request.form.get("category_name"),
+            "tip_suggestion": request.form.get("tip_suggestion"),
+            "tip_description": request.form.get("tip_description"),
+            "created_by": session["user"]
+        }
+        mongo.db.tips.insert_one(tip)
+        flash("Thank you...you have successfully shared your tip with our working from home community!")
+        return redirect(url_for("tips"))
+
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("addtip.html", categories=categories)
 
