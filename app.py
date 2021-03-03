@@ -78,6 +78,9 @@ def tips():
     return render_template("tips.html", tips=tips)
 
 
+@app.route("/add_tip")
+def add_tip():
+    return render_template("addtip.html")
 
 
 if __name__ == "__main__":
