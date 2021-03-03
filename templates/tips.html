@@ -1,10 +1,21 @@
 {% extends "base.html" %}
 {% block content %}
 
-    {% for tip in tips %}
-        {{ tip.tip_suggestion }}<br>
-        {{ tip.category_name }}<br>
-        {{ tip.tip_details }}
-    {% endfor %}
+    
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    {% for tip in tips %}
+                    <h5 class="card-title">{{ tip.tip_suggestion }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ tip.category_name }}</h6>
+                    <p class="card-text">{{ tip.tip_details }}</p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock %}

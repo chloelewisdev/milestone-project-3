@@ -74,7 +74,7 @@ def log_in():
 
 @app.route("/tips")
 def tips():
-    tips = mongo.db.tips.find()
+    tips = list(mongo.db.tips.find())
     return render_template("tips.html", tips=tips)
 
 
