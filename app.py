@@ -32,7 +32,7 @@ def sign_up():
             {"username": request.form.get("username").lower()})
 
         if existing_user:
-            flash("Oops, that username already exists!")
+            flash("Oops, that username already exists! Please try again with a different username")
             return redirect(url_for("sign_up"))
 
         sign_up = {
@@ -78,7 +78,7 @@ def tips():
     return render_template("tips.html", tips=tips)
 
 
-@app.route("/addtip", methods=["GET", "POST"])
+@app.route("/add_tip", methods=["GET", "POST"])
 def add_tip():
     if request.method == "POST":
         tip = {
@@ -93,6 +93,14 @@ def add_tip():
 
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("addtip.html", categories=categories)
+
+
+@app.route("/log_out")
+def log_out():
+	flash("You have now been logged out")
+	session.pop("user")
+	return redirect(url_for("log_in"))
+
 
 
 if __name__ == "__main__":
