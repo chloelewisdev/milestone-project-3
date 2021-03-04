@@ -44,6 +44,8 @@ def sign_up():
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
         flash("Welcome! You have now signed up")
+        return redirect(url_for("my_tips", username=session["user"]))
+
     return render_template("signup.html")
 
 
@@ -59,7 +61,10 @@ def log_in():
             if check_password_hash(
                 existing_user["password"], request.form.get("password")):
                     session["user"] = request.form.get("username").lower()
-                    flash("Welcome, {}".format(request.form.get("username")))
+                    flash("Welcome, {}".format(
+                            request.form.get("username")))
+                    return redirect(url_for("my_tips", username=session["user"]))
+                    
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
@@ -125,8 +130,20 @@ def edit_tip(tip_id):
 @app.route("/delete_tip/<tip_id>")
 def delete_tip(tip_id):
     mongo.db.tips.remove({"_id": ObjectId(tip_id)})
-    flash("You have successfully removed your tip from the community tips board")
+    flash("You have successfully removed your tip from the community board")
     return redirect(url_for("tips"))
+
+
+@app.route("/my_tips/<username>", methods=["GET", "POST"])
+def my_tips(username):
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+
+    if session["user"]:
+        tips = list(mongo.db.tips.find().sort("_id", 1))
+        return render_template("mytips.html", username=username, tips=tips)
+
+    return redirect(url_for("log_in"))
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
