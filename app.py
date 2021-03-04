@@ -91,6 +91,13 @@ def tips():
     return render_template("tips.html", tips=tips)
 
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    tips = list(mongo.db.tips.find({"$text": {"$search": query}}))
+    return render_template("tips.html", tips=tips)
+
+
 @app.route("/add_tip", methods=["GET", "POST"])
 def add_tip():
     if request.method == "POST":
@@ -144,6 +151,7 @@ def my_tips(username):
         return render_template("mytips.html", username=username, tips=tips)
 
     return redirect(url_for("log_in"))
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
