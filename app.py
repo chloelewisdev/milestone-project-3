@@ -92,7 +92,7 @@ def add_tip():
         tip = {
             "category_name": request.form.get("category_name"),
             "tip_suggestion": request.form.get("tip_suggestion"),
-            "tip_description": request.form.get("tip_description"),
+            "tip_details": request.form.get("tip_details"),
             "created_by": session["user"]
         }
         mongo.db.tips.insert_one(tip)
