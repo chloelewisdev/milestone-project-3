@@ -72,6 +72,14 @@ def log_in():
 
     return render_template("login.html")
 
+
+@app.route("/log_out")
+def log_out():
+	flash("You have now been logged out")
+	session.pop("user")
+	return redirect(url_for("log_in"))
+
+
 @app.route("/tips")
 def tips():
     tips = list(mongo.db.tips.find())
@@ -92,15 +100,14 @@ def add_tip():
         return redirect(url_for("tips"))
 
     categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("addtip.html", categories=categories)
+    return render_template("add_tip.html", categories=categories)
 
 
-@app.route("/log_out")
-def log_out():
-	flash("You have now been logged out")
-	session.pop("user")
-	return redirect(url_for("log_in"))
-
+@app.route("/edit_tip/<tip_id>", methods=["GET", "POST"])
+def edit_tip(tip_id):
+    tip = mongo.db.tips.find_one({"_id": ObjectId(tip_id)})
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template("edit_tip.html", tip=tip, categories=categories)
 
 
 if __name__ == "__main__":
