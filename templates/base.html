@@ -21,15 +21,15 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="{{url_for('index')}}">Home</a>
-                    <a class="nav-link" href="{{url_for('tips')}}">Tips</a>
+                    <a class="nav-link active {% block nav_home %}{% endblock %}" aria-current="page" href="{{url_for('index')}}">Home</a>
+                    <a class="nav-link {% block nav_tips %}{% endblock %}" href="{{url_for('tips')}}">Tips</a>
                     {% if session.user %}
-                        <a class="nav-link" href="{{url_for('add_tip')}}">Share Tips</a>
-                        <a class="nav-link" href="{{url_for('my_tips', username=session['user'])}}">My Tips</a>
+                        <a class="nav-link {% block nav_sharetips %}{% endblock %}" href="{{url_for('add_tip')}}">Share Tips</a>
+                        <a class="nav-link {% block nav_mytips %}{% endblock %}" href="{{url_for('my_tips', username=session['user'])}}">My Tips</a>
                         <a class="nav-link" href="{{url_for('log_out')}}">Log Out</a>
                     {% else %}
-                        <a class="nav-link" href="{{url_for('log_in')}}">Log In</a>
-                        <a class="nav-link" href="{{url_for('sign_up')}}">Sign Up</a>
+                        <a class="nav-link {% block nav_login %}{% endblock %}" href="{{url_for('log_in')}}">Log In</a>
+                        <a class="nav-link {% block nav_signup %}{% endblock %}" href="{{url_for('sign_up')}}">Sign Up</a>
                     {% endif %}
                 </div>
                 </div>

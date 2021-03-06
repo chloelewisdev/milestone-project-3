@@ -1,7 +1,22 @@
 {% extends "base.html" %}
 
-{% block content %}
+<!--Sets this page as current page on nav-->
+{% block nav_home %} active-menu {% endblock %}
 
-<p>This is the home page</p>
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <h3>It's 2021 and so many people are now working from home.</h3>
+            <h4>Join our remote online community where we share tips 
+                and tricks to stay focused, connected and positive, enabling you
+                to actually enjoy this opportunity to work from your humble abode.
+            </h4>
+        </div>
+        <div class="col-12 col-md-6">
+            <img class="img-fluid" src="{{url_for('static', filename='/images/' + 'example-scene-2.png')}}" alt="Woman working at on a laptop at home" />
+        </div>
+    </div>
+</div>      
 
 {% endblock %}
