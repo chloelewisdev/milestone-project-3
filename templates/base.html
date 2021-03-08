@@ -13,9 +13,9 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{{url_for('index')}}">WFH</a>
+                <a class="navbar-brand" href="{{url_for('index')}}">REMOTE</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
@@ -55,6 +55,17 @@
     {% block content %}
     {% endblock %}
 </div>
+
+      <footer id="footer">
+         <div class="container-fluid">
+            <div class="row text-center">
+               <div class="col social-icons">
+                  <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                  <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+               </div>
+            </div>
+         </div>
+      </footer>
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
