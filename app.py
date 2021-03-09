@@ -108,7 +108,7 @@ def add_tip():
             "created_by": session["user"]
         }
         mongo.db.tips.insert_one(tip)
-        flash("Thank you...you have successfully shared your tip with our working from home community!")
+        flash("Thank you...your working from home tip has now been added to our community board below!")
         return redirect(url_for("tips"))
 
     categories = mongo.db.categories.find().sort("category_name", 1)

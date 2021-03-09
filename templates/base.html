@@ -24,7 +24,7 @@
                     <a class="nav-link active {% block nav_home %}{% endblock %}" aria-current="page" href="{{url_for('index')}}">Home</a>
                     <a class="nav-link {% block nav_tips %}{% endblock %}" href="{{url_for('tips')}}">Tips</a>
                     {% if session.user %}
-                        <a class="nav-link {% block nav_sharetips %}{% endblock %}" href="{{url_for('add_tip')}}">Share Tips</a>
+                        <a class="nav-link {% block nav_addtips %}{% endblock %}" href="{{url_for('add_tip')}}">Share Tips</a>
                         <a class="nav-link {% block nav_mytips %}{% endblock %}" href="{{url_for('my_tips', username=session['user'])}}">My Tips</a>
                         <a class="nav-link" href="{{url_for('log_out')}}">Log Out</a>
                     {% else %}
@@ -36,25 +36,26 @@
             </div>
         </nav>
     </header>
-
-    <section>
-        <!-- flash messages -->
-        {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                {% for message in messages %}
-                    <div class="row flashes">
-                        <h4>{{ message }}</h4>
-                    </div>
-                {% endfor %}
-            {% endif %}
-        {% endwith %}
+    <section class="flash-message">
+        <div class="row">
+            <div class="col">
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="row flashes">
+                            <h4>{{ message }}</h4>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            </div>
+        </div>
     </section>
-    
 
-<div class="container">
-    {% block content %}
-    {% endblock %}
-</div>
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
 
       <footer id="footer">
          <div class="container-fluid">

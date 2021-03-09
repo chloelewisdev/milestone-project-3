@@ -1,31 +1,57 @@
 {% extends "base.html" %}
 
+<!--Sets this page as current page on nav-->
+{% block nav_addtips %} active-menu {% endblock %}
+
 {% block content %}
-
-<h3 class="center-align">Share your working from home tips below by adding your suggestions below!</h3>
-<h4 class="center-align">Once you have clicked on the Share! button your tip will be added to our community tips page</h4>
-<div class="row">
-    <div class="col">
-        <form method="POST" action="{{ url_for('add_tip')}}">
-            <select class="form-select validate" id="category_name" name="category_name" aria-label="Default select example">
-                <option selected>Choose category</option>
-                {% for category in categories %}
-                    <option value="{{ category.category_name }}">{{ category.category_name }}</option>
-                {% endfor %}
-            </select>
-            <div class="mb-3">
-                <label for="tip_suggestion" class="form-label">Suggestion</label>
-                <input type="text" class="form-control" id="tip_suggestion" name="tip_suggestion" minlength="5" maxlength="25" required>
-            </div>
-            <div class="mb-3">
-                <label for="tip_details" class="form-label">Details</label>
-                <input type="text" class="form-control" id="tip_details" name="tip_details" minlength="5" maxlength="100" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Share!</button>
-            <a href="{{ url_for('tips')}}" class="btn btn-primary btn-sm">Cancel</a>
-
-        </form>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col text-center">
+            <img class="img-fluid" src="{{url_for('static', filename='/images/' + 'plant-3.png')}}" alt="Plant" />
+        </div>
     </div>
+
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col add-tip-heading text-center">
+            <h3 class="center-align">Share your working from home tips!</h3>
+            <br>
+            <h4 class="center-align">As a member of our community you can complete 
+                the form below and then click on the Share button to add your tip to 
+                our community tips board.
+            </h4>
+            <br>
+        </div>
+    </div>
+</div>
+<div class="container add-tip-form">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2 text-center mx-auto">
+            <form method="POST" action="{{ url_for('add_tip')}}">
+                <select class="form-select validate" id="category_name" name="category_name"
+                    aria-label="Default select example">
+                    <option selected>Choose category</option>
+                    {% for category in categories %}
+                    <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                    {% endfor %}
+                </select>
+                <div class="mb-3">
+                    <label for="tip_suggestion" class="form-label">Suggestion</label>
+                    <input type="text" class="form-control" id="tip_suggestion" name="tip_suggestion" minlength="5"
+                        maxlength="25" required>
+                </div>
+                <div class="mb-3">
+                    <label for="tip_details" class="form-label">Details</label>
+                    <input type="text" class="form-control" id="tip_details" name="tip_details" minlength="5"
+                        maxlength="100" required>
+                </div>
+                <button type="submit" class="btn btn-share-tip">Share!</button>
+                <a href="{{ url_for('tips')}}" class="btn btn-share-tip">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
 </div>
 
 {% endblock %}

@@ -9,6 +9,11 @@ body {
 }
 
 
+.active-menu {
+    border-bottom: 2px solid #A7E8BD !important;
+    padding-bottom: 0.5px !important;
+}
+
 .index-main {
     padding-top: 100px;
 }
@@ -78,8 +83,20 @@ body {
     padding-top: 100px;
 }
 
+@media screen and (max-width: 768px) {
+    .tips{
+    padding-top: 30px;
+    }
+}
+
 .tips-title {
     padding-top: 150px;
+}
+
+@media screen and (max-width: 768px) {
+    .tips-title {
+    padding-top: 30px;
+    }
 }
 
 .tips-search {
@@ -98,4 +115,38 @@ body {
 
 .btn-tips-style {
     background-color: #ab8de5;
+}
+
+.btn-tips-update {
+    background-color: #56b39c;
+}
+
+.add-tip-heading {
+    padding-top: 70px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.add-tip-form {
+    width: 700px;
+    padding: 20px;
+    background-color: #56b39c;
+}
+
+@media screen and (max-width: 540px) {
+    .add-tip-form {
+        width: 300px;
+        padding-right:30px;
+        padding-left:30px;
+    }
+}
+
+.btn-share-tip {
+    background-color: #fbdc8e;
+}
+.flash-message {
+    padding-top: 70px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #56b39c;
 }

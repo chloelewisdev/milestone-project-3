@@ -1,6 +1,9 @@
 {% extends "base.html" %}
-{% block content %}
 
+<!--Sets this page as current page on nav-->
+{% block nav_tips %} active-menu {% endblock %}
+
+{% block content %}
 
 <div class="container-fluid tips">
     <div class="row">
@@ -30,7 +33,7 @@
     {% if tips|length > 0 %}
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-6 offset-lg-3 text-center tips-main">
+            <div class="col-lg-8 offset-lg-2 text-center tips-main">
                 {% for tip in tips %}
                     <div class="card tip-suggestion-card">
                         <div class=" card-body">
@@ -39,8 +42,8 @@
                             <p class="card-text">{{ tip.tip_details }}</p>
                             <p class="fst-italic">This tip was shared by {{ tip.created_by }}</p>
                                 {% if session.user|lower == tip.created_by %}
-                                <a href="{{ url_for('delete_tip', tip_id=tip._id)}}" class="btn btn-primary btn-sm">Delete</a>
-                                <a href="{{ url_for('edit_tip', tip_id=tip._id)}}" class="btn btn-primary btn-sm">Edit</a>
+                                <a href="{{ url_for('delete_tip', tip_id=tip._id)}}" class="btn btn-tips-update btn-sm">Delete</a>
+                                <a href="{{ url_for('edit_tip', tip_id=tip._id)}}" class="btn btn-tips-update btn-sm">Edit</a>
                                 {% endif %}
                         </div>
                     </div>
