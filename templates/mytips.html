@@ -2,14 +2,31 @@
 
 {% block content %}
 
-<div class="container">
+<div class="container-fluid my-tips-header">
+    <div class="row">
+        <div class="col text-center">
+            <img class="img-fluid" src="{{url_for('static', filename='/images/' + 'laptop-2.png')}}" alt="Plant" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col my-tips-heading text-center">
+            <h3>{{ username }}'s Working From Home Top Tips</h3>
+        </div>
+    </div>
     <div class="row">
         <div class="col-md-12 text-center">
-            <h3>{{ username }}'s Working From Home Top Tips</h3>
+            <a class="btn btn-primary btn-lg" href="{{url_for('add_tip')}}">Share More Tips</a>
+            <a class="btn btn-primary btn-lg" href="{{url_for('log_out')}}">Log Out</a>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2 text-center">
             {% for tip in tips %}
                 {% if session.user|lower == tip.created_by|lower %}
-                    <div class="card"">
-                        <div class=" card-body">    
+                    <div class="card mytips-suggestion-card">
+                        <div class="card-body">    
                             <h5 class="card-title">{{ tip.tip_suggestion }}</h5>
                             <h6 class="card-subtitle mb-2 text-muted">{{ tip.category_name }}</h6>
                             <p class="card-text">{{ tip.tip_details }}</p>
@@ -23,18 +40,6 @@
         </div>
     </div>
 </div>
-<div class="container">
-    <div class="row">
-        <div class="col-md-12 text-center">
-            <a class="btn btn-primary btn-sm" href="{{url_for('add_tip')}}">Share More Tips</a>
-            <a class="btn btn-primary btn-sm" href="{{url_for('log_out')}}">Log Out</a>
-
-    
-        </div>
-    </div>
-
-    </div>
-
 </div>
 
 {% endblock %}  

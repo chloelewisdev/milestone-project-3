@@ -94,7 +94,17 @@ def tips():
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
-    tips = list(mongo.db.tips.find({"$text": {"$search": query}}))
+    #tips = list(mongo.db.tips.find({"$text": {"$search": query}}))
+    query_string = {'$regex': ".*{0}.*".format(query), '$options': 'i'}
+    tips = list(mongo.db.tips.find({
+        "$or": [
+            {"category_name": query_string}, 
+            {"tip_suggestion": query_string},
+            {"tip_details": query_string}
+            ]
+    }))
+
+
     return render_template("tips.html", tips=tips)
 
 

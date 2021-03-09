@@ -14,6 +14,13 @@ body {
     padding-bottom: 0.5px !important;
 }
 
+.flash-message {
+    padding-top: 70px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #56b39c;
+}
+
 .index-main {
     padding-top: 100px;
 }
@@ -113,8 +120,12 @@ body {
     font-weight: bold;
 }
 
-.btn-tips-style {
+.btn-tips-search {
     background-color: #ab8de5;
+}
+
+.btn-tips-reset {
+    background-color: #b47464;
 }
 
 .btn-tips-update {
@@ -144,9 +155,30 @@ body {
 .btn-share-tip {
     background-color: #fbdc8e;
 }
-.flash-message {
-    padding-top: 70px;
-    padding-left: 10px;
-    padding-right: 10px;
-    color: #56b39c;
+
+.btn-cancel-tip {
+    background-color: #b47464;
+}
+
+.login-form {
+    padding-top: 30px;
+    padding: 20px;
+}
+
+.btn-login {
+    background-color: #78e5e1;
+}
+
+.login-image {
+    height: 30rem;
+    padding: 20px;;
+}
+
+.mytips-suggestion-card {
+    padding-top: 10px;
+    background-color: #92d0c0;
+}
+
+.my-tips-header {
+    padding: 20px;
 }
