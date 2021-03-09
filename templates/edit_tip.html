@@ -1,35 +1,53 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h4 class="center-align">Edit your tips here</h4>
-<div class="row">
-    <div class="col">
-        <form method="POST" action="{{ url_for('edit_tip', tip_id = tip._id)}}">
-            <select class="form-select validate" id="category_name" name="category_name" aria-label="Default select example">
-                <option>Choose category</option>
-                {% for category in categories %}
-                     {% if category.category_name == tip.category_name %}
-                    <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
-                    {% else %}
-                    <option value="{{ category.category_name }}">{{ category.category_name }}</option>
-                    {% endif %}
-                {% endfor %}
-            </select>
-            <div class="mb-3">
-                <label for="tip_suggestion" class="form-label">Suggestion</label>
-                <input type="text" class="form-control" id="tip_suggestion" name="tip_suggestion" 
-                value="{{ tip.tip_suggestion }}" minlength="5" maxlength="25" required>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2 edit-tip-heading text-center">      
+            <h4 class="center-align">Edit your selected tip here:</h4>
+        </div>
+    </div>
+</div>
+<div class="container edit-tip-form">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2 text-left mx-auto">
+            <form method="POST" action="{{ url_for('edit_tip', tip_id = tip._id)}}">
+                <select class="form-select validate" id="category_name" name="category_name" aria-label="Default select example">
+                    <option>Choose category</option>
+                    {% for category in categories %}
+                        {% if category.category_name == tip.category_name %}
+                        <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
+                        {% else %}
+                        <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
+                <div class="mb-3">
+                    <label for="tip_suggestion" class="form-label label-style">Suggestion</label>
+                    <input type="text" class="form-control" id="tip_suggestion" name="tip_suggestion" 
+                    value="{{ tip.tip_suggestion }}" minlength="5" maxlength="25" required>
+                </div>
+                <div class="mb-3">
+                    <label for="tip_details" class="form-label label-style">Details</label>
+                    <textarea class="form-control" id="tip_details" name="tip_details" 
+                    minlength="5" maxlength="100" required>
+                    {{- tip.tip_details -}}
+                </textarea>
+                </div>   
+                <div class="text-center">                
+                <a href="{{ url_for('tips')}}" class="btn btn-outline-danger btn-lg">Cancel</a>
+                <button type="submit" class="btn btn-outline-success btn-lg">Save Update</button>
+                </div> 
+            </form>
+        </div>
+    </div>
+</div>
+    <div class="container-fluid edit-tip-image">
+        <div class="row">
+            <div class="col text-center">
+                <img class="img-fluid" src="{{url_for('static', filename='/images/' + 'plant-4.png')}}" alt="Plant" />
             </div>
-            <div class="mb-3">
-                <label for="tip_details" class="form-label">Details</label>
-                <textarea class="form-control" id="tip_details" name="tip_details" 
-                minlength="5" maxlength="100" required>
-                {{- tip.tip_details -}}
-            </textarea>
-            </div>                    
-            <a href="{{ url_for('tips')}}" class="btn btn-primary btn-sm">Cancel</a>
-            <button type="submit" class="btn btn-primary btn-sm">Save Update</button>
-        </form>
+        </div>
     </div>
 </div>
 

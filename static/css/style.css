@@ -243,3 +243,38 @@ body {
 .my-tips-section {
     padding-top: 20px;
 }
+
+
+
+.edit-tip-heading {
+    padding-top: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #4c8474;
+}
+
+.edit-tip-form {
+    width: 800px;
+    padding: 10px;
+}
+
+@media screen and (max-width: 540px) {
+    .edit-tip-form {
+        width: 350px;
+
+    }
+}
+
+.edit-tip-image {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.label-style {
+    padding-top: 30px;
+    font-weight: 500;
+}
+
+textarea.form-control {
+    min-height: 150px;
+}
