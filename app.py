@@ -136,7 +136,7 @@ def edit_tip(tip_id):
         }
 
         mongo.db.tips.update({"_id": ObjectId(tip_id)}, tip_update)
-        flash("You have succesfully updated your working from home tip")
+        flash("Thanks, you have succesfully updated your tip")
         return redirect(url_for("tips"))
 
     tip = mongo.db.tips.find_one({"_id": ObjectId(tip_id)})

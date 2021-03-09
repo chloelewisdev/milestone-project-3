@@ -44,10 +44,13 @@ body {
 
 
 .flash-message {
-    padding-top: 70px;
-    padding-left: 10px;
-    padding-right: 10px;
-    color: #56b39c;
+    text-align: center;
+    font-weight: 700;
+    padding-top: 100px;
+}
+
+.flash-message-style {
+    color: #b47464;
 }
 
 /*--------------------------------------------------------index.html*/
@@ -202,7 +205,7 @@ body {
 }
 
 .btn-login {
-    background-color: #78e5e1;
+    background-color: #56b39c;
 }
 
 /*--------------------------------------------------------mytips.html*/
@@ -229,7 +232,7 @@ body {
 }
 
 .btn-logout {
-    background-color: #ab8de5;
+    background-color: #78e5e1;
 }
 
 .btn-tips-delete {
@@ -244,6 +247,7 @@ body {
     padding-top: 20px;
 }
 
+/*--------------------------------------------------------edit_tip.html*/
 
 
 .edit-tip-heading {
@@ -275,6 +279,20 @@ body {
     font-weight: 500;
 }
 
-textarea.form-control {
+.textarea.form-control {
     min-height: 150px;
+}
+
+/*--------------------------------------------------------login.html*/
+
+.login-heading {
+    padding-top: 50px;
+}
+
+.login-heading h3, h4 {
+    color: #4c8474;
+}
+
+.btn-signup {
+    background-color: #ab8de5;
 }

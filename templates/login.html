@@ -2,41 +2,30 @@
 
 {% block content %}
 
-<!--div class="container-fluid">
-    <div class="row justify-content-center">
-        <div class="col-12 col-md-8 text-center"> 
-            <h3>Please log in below</h3>
-            
-        </div>
-        <div class="col-12 col-lg-4">
-        </div>
-    </div>
-</div -->  
-
-<div class="container">
+<div class="container-fluid login-heading">
     <div class="row">
-        <div class="col-md-12 text-center">
-            <h3>Great to see you again! Please login below...</h3>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-12 col-md-6 text-center">
+        <div class="col-12 col-md-6">
+            <h3 class="text-center">Please login below...</h3>
             <form method="POST" action="{{ url_for('log_in') }}" class="login-form">
                 <div class="mb-3">
-                    <label for="username" class="form-label">Username</label>
+                    <label for="username" class="form-label text-left">Username</label>
                     <input type="text" class="form-control" id="username" placceholder="username" 
                     name="username" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
                 </div>
                 <div class="mb-3">
-                    <label for="password" class="form-label">Password</label>
+                    <label for="password" class="form-label text-left">Password</label>
                     <input type="password" class="form-control" id="password" placeholder="password"
                     name="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
                 </div>
+                <div class="text-center">
                 <button type="submit" class="btn btn-login" id="log-in-btn">Log In</button>
+                </div>
             </form>
-            <div>
+            <br>
+            <br>
+            <div class="text-center">
                 <h4>Don't have an account with us yet?</h4>
-                 <a class="btn" id="redirect-signin-btn" href="{{ url_for('sign_up') }}">Sign Up</a>     
+                 <a class="btn btn-signup" id="redirect-signin-btn" href="{{ url_for('sign_up') }}">Sign Up</a>     
             </div>
         </div>
         <div class="col-12 col-md-6 text-center">
