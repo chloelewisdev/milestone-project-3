@@ -5,20 +5,15 @@
 <div class="container-fluid my-tips-header">
     <div class="row">
         <div class="col text-center">
-            <img class="img-fluid" src="{{url_for('static', filename='/images/' + 'laptop-2.png')}}" alt="Plant" />
+            <img class="img-fluid" src="{{url_for('static', filename='/images/' + 'imac.png')}}" alt="Mac computer graphics" />
         </div>
     </div>
     <div class="row">
         <div class="col my-tips-heading text-center">
-            <h3>{{ username }}'s Working From Home Top Tips</h3>
+            <h3>{{ username }}'s top tips for working remotely:</h3>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-12 text-center">
-            <a class="btn btn-primary btn-lg" href="{{url_for('add_tip')}}">Share More Tips</a>
-            <a class="btn btn-primary btn-lg" href="{{url_for('log_out')}}">Log Out</a>
-        </div>
-    </div>
+    <br>
 </div>
 <div class="container">
     <div class="row">
@@ -31,12 +26,26 @@
                             <h6 class="card-subtitle mb-2 text-muted">{{ tip.category_name }}</h6>
                             <p class="card-text">{{ tip.tip_details }}</p>
                             <p class="fst-italic">This tip was shared by {{ tip.created_by }}</p>
-                            <a href="{{ url_for('delete_tip', tip_id=tip._id)}}" class="btn btn-primary btn-sm">Delete</a>
-                            <a href="{{ url_for('edit_tip', tip_id=tip._id)}}" class="btn btn-primary btn-sm">Edit</a>
+                            <a href="{{ url_for('delete_tip', tip_id=tip._id)}}" class="btn btn-outline-danger btn-sm">Delete</a>
+                            <a href="{{ url_for('edit_tip', tip_id=tip._id)}}" class="btn btn-outline-success btn-sm">Edit</a>
                         </div>
                     </div>
                 {% endif %}
             {% endfor %}
+        </div>
+    </div>
+</div>
+<br>
+<div class="container my-tips-section">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2  my-tips-heading text-center">
+            <h3>{{ username }} have you thought of another tip you'd like to share with our remote community?</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2  text-center">
+            <a class="btn btn-share-tip btn-lg" href="{{url_for('add_tip')}}">Share More Tips</a>
+            <a class="btn btn-logout btn-lg" href="{{url_for('log_out')}}">Log Out</a>
         </div>
     </div>
 </div>

@@ -196,7 +196,6 @@ body {
     background-color: #b47464;
 }
 
-
 .login-form {
     padding-top: 30px;
     padding: 20px;
@@ -206,6 +205,8 @@ body {
     background-color: #78e5e1;
 }
 
+/*--------------------------------------------------------mytips.html*/
+
 .login-image {
     height: 30rem;
     padding: 20px;;
@@ -213,9 +214,32 @@ body {
 
 .mytips-suggestion-card {
     padding-top: 10px;
-    background-color: #92d0c0;
+    background-color: #fff;
 }
 
 .my-tips-header {
     padding: 20px;
+}
+
+.my-tips-header h3{
+    font-size: 35px;;
+    padding-top: 10px;
+    color: #4c8474;
+    font-weight: 600;
+}
+
+.btn-logout {
+    background-color: #ab8de5;
+}
+
+.btn-tips-delete {
+    background-color: #b47464;
+}
+
+.btn-edit {
+    background-color: #92d0c0;
+}
+
+.my-tips-section {
+    padding-top: 20px;
 }
