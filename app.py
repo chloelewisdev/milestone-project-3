@@ -104,7 +104,6 @@ def search():
             ]
     }))
 
-
     return render_template("tips.html", tips=tips)
 
 

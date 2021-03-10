@@ -24,14 +24,14 @@
             <form action="{{url_for('search')}}" method="POST">
                 <label for="query" class="form-label search-tips">Search tips</label>
                 <input type="text" name="query" id="query" minlength="3" required>
-                <button class="btn btn-tips-search btn-lg" type="submit" value="Submit">Search</button>
+                <button class="btn btn-tips-search btn-lg" type="submit" value="Submit">Search</button>   
                 <a href="{{ url_for('tips')}}" class="btn btn-lg btn-tips-reset">Reset</a>
             </form>
         </div>
     </div>
 </div>
     {% if tips|length > 0 %}
-    <div class="container-fluid"">
+    <div class="container-fluid" id="tips-board">
         <div class="row">
             <div class="col-lg-8 offset-lg-2 text-center tips-main">
                 {% for tip in tips %}
@@ -54,6 +54,10 @@
                 {% endif %}
         </div>
     </div>
+
+
+    <!--Scroll to top button-->
+      <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
 
 {% endblock %}
