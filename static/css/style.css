@@ -90,11 +90,36 @@ body {
 }
 
 /*--------------------------------------------------------Footer*/
-#footer {
+
+#page-content {
+  flex: 1 0 auto;
+}
+
+#sticky-footer {
+    flex-shrink: 0;
+    background-color: #fbdfda;
+    color: dimgrey;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+
+.fa-facebook-f {
+    color: #4c8474;
+    font-size: 1.5rem;
+}
+
+.fa-instagram {
+    color: #4c8474;
+    font-size: 1.5rem;
+}
+
+/*#footer {
     background-color: #f9eae9;
     padding: 10px;
     margin-top: 20px;
 }
+
 
 .fa-facebook-f {
     color: #4c8474;
@@ -106,7 +131,7 @@ body {
     color: #4c8474;
     font-size: 1.5rem;
     padding: 10px;
-}
+}*/
 
 /*--------------------------------------------------------tips.html*/
 

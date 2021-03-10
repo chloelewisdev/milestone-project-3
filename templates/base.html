@@ -11,7 +11,8 @@
     <title>Working From Home</title>
 </head>
 
-<body>
+<body class="d-flex flex-column">
+    <div id="page-content">
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
             <a class="navbar-brand" href="{{url_for('index')}}">REMOTE</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -66,25 +67,31 @@
         {% block content %}
         {% endblock %}
     </div>
+    </div>
 
-      <footer id="footer">
-         <div class="container-fluid">
-            <div class="row text-center">
-               <div class="col social-icons">
-                  <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                  <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-               </div>
+    <!--Sticky footer-->
+
+    <footer id="sticky-footer" class="py-4">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col social-icons">
+                    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
             </div>
-         </div>
-      </footer>
+        </div>
+    </footer>
 
-      <!--Scripts for Hamburger Icon from Eventyret_mentor on Code Institute Slack Community-->
+      <!--Scripts for Hamburger Icon-->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
+      <!--Local scripts -->
+
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     {% block scripts %}
     {% endblock %}
-</body>
+
+    </body>
 </html>
