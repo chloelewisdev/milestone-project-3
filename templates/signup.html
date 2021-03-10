@@ -1,8 +1,43 @@
 {% extends "base.html" %}
 
-{% block content %}
+<!--Sets this page as current page on nav-->
+{% block nav_signup %} active-menu {% endblock %}
 
-<div class="container">
+{% block content %}
+<div class="container-fluid login-heading">
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <h3 class="text-center">Sign Up Here and join our remote working community!</h3>
+            <form method="POST" action="{{ url_for('sign_up') }}">
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="username" placceholder="username" 
+                    name="username" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="password"
+                    name="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-signup" id="sign-up-btn">Sign Up</button>
+                </div>
+            </form>
+            <br>
+            <br>
+            <div class="text-center">            
+                <h4 class="smaller-heading login-text">Already have an account with us?</h4>
+                <a class="btn btn-login" id="redirect-signin-btn" href="{{ url_for('log_in') }}">Log In</a>    
+            </div>
+        </div>
+        <div class="col-12 col-md-6 text-center">
+            <img class="img-fluid sign-up-image" src="{{url_for('static', filename='/images/' + 'plant-4.png')}}" alt="plant graphic" />
+        </div>
+    </div>
+</div>
+
+
+<!--div class="container">
     <div class="row">
         <div class="col-md-12 text-center">
             <h3>We are delighted you are joining our remote community!</h3>
@@ -31,5 +66,5 @@
             <h4 class="smaller-heading">Already have an account with us?</h4>
             <a class="btn" id="redirect-signin-btn" href="{{ url_for('log_in') }}">Sign In</a>
         </div>
-</div>
+</div-->
 {% endblock %}  

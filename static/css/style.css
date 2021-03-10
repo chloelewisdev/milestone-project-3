@@ -74,7 +74,7 @@ body {
     padding-top: 10px;
 }
 .index-card-1 {
-    background-color: #ab8de5;
+    background-color: #fbdc8e;
     padding-top: 10px;
 }
 
@@ -84,7 +84,7 @@ body {
 }
 
 .index-card-3 {
-   background-color: #fbdc8e;
+   background-color: #ab8de5;
    padding-top: 10px;
    
 }
@@ -190,7 +190,6 @@ body {
     }
 }
 
-
 .btn-share-tip {
     background-color: #fbdc8e;
 }
@@ -205,7 +204,7 @@ body {
 }
 
 .btn-login {
-    background-color: #56b39c;
+    background-color: #ab8de5;
 }
 
 /*--------------------------------------------------------mytips.html*/
@@ -265,7 +264,6 @@ body {
 @media screen and (max-width: 540px) {
     .edit-tip-form {
         width: 350px;
-
     }
 }
 
@@ -289,10 +287,10 @@ body {
     padding-top: 50px;
 }
 
-.login-heading h3, h4 {
-    color: #4c8474;
+.btn-signup {
+    background-color: #4c8474;
 }
 
-.btn-signup {
-    background-color: #ab8de5;
+.sign-up-image {
+    padding-top: 40px;
 }
