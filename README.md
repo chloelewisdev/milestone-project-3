@@ -317,8 +317,7 @@ echo web: python app.py > Procfile
 ```
 5. I then committed these new files with the following:
 ```
-git add 
-```
+git add
 git commit -m 
 ```
 6. With these files committed, I logged in to Heroku using this command and entered my details at the prompt:
@@ -332,7 +331,7 @@ heroku git:remote -a ms3-move-on
 8. I then completed the deployment by pushing the projekt to Heroku:
 ```
 git push heroku master
-``` 
+```
 9. This completed the process of deploying the project to Heroku. Once deployed, I continued to push all changes made to the project to Heroku throughout the remaining development process.
 
 ## Credits
