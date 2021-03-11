@@ -334,19 +334,23 @@ body {
     margin-bottom: 1rem!important;
 }
 
+/*-------------------------------------------------------login.html*/
 
 .login-form {
     padding-top: 30px;
     padding: 20px;
 }
 
-
-/*--------------------------------------------------------mytips.html*/
-
 .login-image {
     height: 30rem;
     padding: 20px;;
 }
+
+.login-intro {
+    padding-bottom: 10px;
+}
+
+/*--------------------------------------------------------mytips.html*/
 
 .mytips-suggestion-card {
     padding-top: 10px;
@@ -371,7 +375,6 @@ body {
 
 /*--------------------------------------------------------edit_tip.html*/
 
-
 .edit-tip-heading {
     padding-top: 50px;
     padding-left: 10px;
@@ -386,7 +389,7 @@ body {
 
 @media screen and (max-width: 540px) {
     .edit-tip-form {
-        width: 350px;
+        width: 300px;
     }
 }
 
