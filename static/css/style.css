@@ -15,6 +15,73 @@ body {
 .btn:hover{
     color: #ffffff;
 }
+
+.btn-index-card {
+    color: black;
+    background-color: #ffffff;
+}
+
+.btn-index-card:hover{
+    color: black;
+    background-color: #Ede0de;
+}
+
+.btn-tips-search {
+    background-color: #ab8de5;
+}
+
+.btn-tips-search:hover{
+    background-color: #d4c3f5;
+}
+
+.btn-cancel {
+    background-color: #b47464;
+}
+
+.btn-cancel:hover{
+    background-color: #ea9782;
+}
+
+.btn-tips-update {
+    background-color: #56b39c;
+}
+
+.btn-tips-update:hover{
+    background-color: #96e4d1;
+}
+
+.btn-share-tip {
+    background-color:#f5c650;
+}
+
+.btn-share-tip:hover{
+    background-color: #fbdc8e;
+}
+
+.btn-login {
+    background-color: #ab8de5;
+}
+
+.btn-login:hover{
+    background-color: #d4c3f5;
+}
+
+.btn-logout {
+    background-color: #a59998;
+}
+
+.btn-logout:hover{
+    background-color: #Ede0de; 
+}
+
+.btn-signup {
+    background-color: #4c8474;
+}
+
+.btn-signup:hover {
+    background-color: #81d6be;
+}
+
 /*--------------------------------------------------------Navbar*/
 
 .navbar {
@@ -207,17 +274,7 @@ body {
     font-weight: bold;
 }
 
-.btn-tips-search {
-    background-color: #ab8de5;
-}
 
-.btn-tips-reset {
-    background-color: #b47464;
-}
-
-.btn-tips-update {
-    background-color: #56b39c;
-}
 
 /*--------------------------------------------------------add_tip.html*/
 
@@ -246,26 +303,13 @@ body {
     }
 }
 
-.btn-share-tip {
-    background-color: #fbdc8e;
-}
 
-.btn-cancel-tip {
-    background-color: #b47464;
-}
 
 .login-form {
     padding-top: 30px;
     padding: 20px;
 }
 
-.btn-login {
-    background-color: #ab8de5;
-}
-
-.btn-login:hover{
-    background-color: #d4c3f5;
-}
 
 /*--------------------------------------------------------mytips.html*/
 
@@ -290,17 +334,6 @@ body {
     font-weight: 600;
 }
 
-.btn-logout {
-    background-color: #78e5e1;
-}
-
-.btn-tips-delete {
-    background-color: #b47464;
-}
-
-.btn-edit {
-    background-color: #92d0c0;
-}
 
 .my-tips-section {
     padding-top: 20px;
@@ -347,9 +380,7 @@ body {
     padding-top: 50px;
 }
 
-.btn-signup {
-    background-color: #4c8474;
-}
+
 
 .sign-up-image {
     padding-top: 40px;

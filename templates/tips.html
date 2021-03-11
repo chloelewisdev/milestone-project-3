@@ -25,7 +25,7 @@
                 <label for="query" class="form-label search-tips">Search tips</label>
                 <input type="text" name="query" id="query" minlength="3" required>
                 <button class="btn btn-tips-search btn-lg" type="submit" value="Submit">Search</button>   
-                <a href="{{ url_for('tips', _anchor='tips-board')}}" class="btn btn-lg btn-tips-reset">Reset</a>
+                <a href="{{ url_for('tips', _anchor='tips-board')}}" class="btn btn-lg btn-cancel">Reset</a>
             </form>
         </div>
     </div>
@@ -42,7 +42,7 @@
                             <p class="card-text">{{ tip.tip_details }}</p>
                             <p class="fst-italic">This tip was shared by {{ tip.created_by }}</p>
                                 {% if session.user|lower == tip.created_by %}
-                                <a href="{{ url_for('delete_tip', tip_id=tip._id)}}" class="btn btn-tips-delete btn-sm">Delete</a>
+                                <a href="{{ url_for('delete_tip', tip_id=tip._id)}}" class="btn btn-cancel btn-sm">Delete</a>
                                 <a href="{{ url_for('edit_tip', tip_id=tip._id)}}" class="btn btn-tips-update btn-sm">Edit</a>
                                 {% endif %}
                         </div>

@@ -39,8 +39,8 @@
                             <h6 class="card-subtitle mb-2 text-muted">{{ tip.category_name }}</h6>
                             <p class="card-text">{{ tip.tip_details }}</p>
                             <p class="fst-italic">This tip was shared by {{ tip.created_by }}</p>
-                            <a href="{{ url_for('delete_tip', tip_id=tip._id)}}" class="btn btn-tips-delete btn-sm">Delete</a>
-                            <a href="{{ url_for('edit_tip', tip_id=tip._id)}}" class="btn btn-edit btn-sm">Edit</a>
+                            <a href="{{ url_for('delete_tip', tip_id=tip._id)}}" class="btn btn-cancel btn-sm">Delete</a>
+                            <a href="{{ url_for('edit_tip', tip_id=tip._id)}}" class="btn btn-tips-update btn-sm">Edit</a>
                         </div>
                     </div>
                 {% endif %}
