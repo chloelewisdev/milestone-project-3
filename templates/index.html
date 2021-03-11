@@ -4,56 +4,58 @@
 {% block nav_home %} active-menu {% endblock %}
 
 {% block content %}
+
+<!--Homepage intro text and image-->  
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-12 col-lg-6 index-main">
-            <h1>It's 2021 and so many of us are now working remotely.</h1>
-            <h2>Join our online community where we share tips 
-                and tricks to stay focused, connected and positive...enabling you
-                to enjoy this opportunity working from your humble abode!
-            </h2>
-        </div>
-        <div class="col-12 col-lg-6">
-            <img class="img-fluid" src="{{url_for('static', filename='/images/' + 'example-scene-2.png')}}" alt="Woman working at on a laptop at home" />
-        </div>
-    </div>
-</div>    
-<div class="container-fluid index-cards">
-<div class="row">
-  <div class="col-sm-12 col-lg-4 index-card-style text-center">
-    <div class="card index-card-1 h-100 ">
-      <div class="card-body">
-        <h5 class="card-title">View our community tips board!</h5>
-        <p class="card-text">Have a look at tips shared by the Remote community to help with 
-            workspace, positivity, breaks, routine and more!</p>
-        <a href="{{url_for('tips')}}" class="btn btn-index-card">View tips</a>
+   <div class="row">
+      <div class="col-12 col-lg-6 index-main">
+         <h1>It's 2021 and so many of us are now working remotely.</h1>
+         <h2>Join our online community where we share tips 
+            and tricks to stay focused, connected and positive...enabling you
+            to enjoy this opportunity working from your humble abode!
+         </h2>
       </div>
-    </div>
-  </div>
-  <div class="col-sm-12 col-lg-4 index-card-style text-center">
-    <div class="card index-card-2 h-100 ">
-      <div class="card-body">
-        <h5 class="card-title ">Join our remote community</h5>
-        <p class="card-text">Want to make a difference? Sign up to start sharing your suggestions, 
-            heling others get the most out of working remotely.
-        </p>
-        <a href="{{url_for('sign_up')}}" class="btn btn-index-card">Sign Up</a>
+      <div class="col-12 col-lg-6">
+         <img class="img-fluid" src="{{url_for('static', filename='/images/' + 'example-scene-2.png')}}" alt="Person working at on a laptop at home" />
       </div>
-    </div>
-  </div>
-  <div class="col-sm-12 col-lg-4 index-card-style text-center">
-    <div class="card index-card-3 h-100 ">
-      <div class="card-body">
-        <h5 class="card-title">Already a Remote member?</h5>
-        <p class="card-text">Log in to to share your tips. 
-            You can also view your profile page to maintain all the different suggestions you have made.
-        </p>
-        <a href="{{url_for('log_in')}}" class="btn btn-index-card">Log In</a>
-      </div>
-    </div>
-  </div>
+   </div>
 </div>
-
-</div>  
-
+<!--Index cards -->  
+<div class="container-fluid index-cards">
+   <div class="row">
+      <div class="col-sm-12 col-lg-4 index-card-style text-center">
+         <div class="card index-card-1 h-100 ">
+            <div class="card-body">
+               <h5 class="card-title">View our community tips board!</h5>
+               <p class="card-text">Have a look at tips shared by the Remote community to help with 
+                  workspace, positivity, breaks, routine and more!
+               </p>
+               <a href="{{url_for('tips')}}" class="btn btn-index-card">View tips</a>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12 col-lg-4 index-card-style text-center">
+         <div class="card index-card-2 h-100 ">
+            <div class="card-body">
+               <h5 class="card-title ">Join our remote community</h5>
+               <p class="card-text">Want to make a difference? Sign up to start sharing your suggestions, 
+                  heling others get the most out of working remotely.
+               </p>
+               <a href="{{url_for('sign_up')}}" class="btn btn-index-card">Sign Up</a>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12 col-lg-4 index-card-style text-center">
+         <div class="card index-card-3 h-100 ">
+            <div class="card-body">
+               <h5 class="card-title">Already a Remote member?</h5>
+               <p class="card-text">Log in to to share your tips. 
+                  You can also view your profile page to maintain all the different suggestions you have made.
+               </p>
+               <a href="{{url_for('log_in')}}" class="btn btn-index-card">Log In</a>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
 {% endblock %}

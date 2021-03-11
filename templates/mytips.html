@@ -5,63 +5,60 @@
 
 {% block content %}
 
+<!--Intro text -->
 <div class="container-fluid my-tips-header">
-    <div class="row">
-        <div class="col text-center">
-            <img class="img-fluid" src="{{url_for('static', filename='/images/' + 'imac.png')}}" alt="Mac computer graphics" />
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-8 offset-lg-2  my-tips-heading text-center">
-            <h3>{{ username }} have you thought of a tip you'd like to share with our remote community?</h3>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-8 offset-lg-2  text-center">
-            <a class="btn btn-share-tip btn-lg" href="{{url_for('add_tip')}}">Share Tip</a>
-        </div>
-    </div>
-    <br>
-    <div class="row">
-        <div class="col my-tips-heading text-center">
-            <h4>{{ username }}'s top tips for working remotely:</h4>
-        </div>
-    </div>
+   <div class="row">
+      <div class="col text-center">
+         <img class="img-fluid" src="{{url_for('static', filename='/images/' + 'imac.png')}}" alt="Mac computer graphics" />
+      </div>
+   </div>
+   <div class="row">
+      <div class="col-lg-8 offset-lg-2  my-tips-heading text-center">
+         <h3>{{ username }} have you thought of a tip you'd like to share with our remote community?</h3>
+      </div>
+   </div>
+   <div class="row">
+      <div class="col-lg-8 offset-lg-2  text-center">
+         <a class="btn btn-share-tip btn-lg" href="{{url_for('add_tip')}}">Share Tip</a>
+      </div>
+   </div>
+   <br>
+   <div class="row">
+      <div class="col my-tips-heading text-center">
+         <h4>{{ username }}'s top tips for working remotely:</h4>
+      </div>
+   </div>
 </div>
+<!--Section showing the different tips the user has added to the site -->
 <div class="container">
-    <div class="row">
-        <div class="col-lg-8 offset-lg-2 text-center">
-            {% for tip in tips %}
-                {% if session.user|lower == tip.created_by|lower %}
-                    <div class="card mytips-suggestion-card">
-                        <div class="card-body">    
-                            <h5 class="card-title">{{ tip.tip_suggestion }}</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">{{ tip.category_name }}</h6>
-                            <p class="card-text">{{ tip.tip_details }}</p>
-                            <p class="fst-italic">This tip was shared by {{ tip.created_by }}</p>
-                            <a href="{{ url_for('delete_tip', tip_id=tip._id)}}" class="btn btn-cancel btn-sm">Delete</a>
-                            <a href="{{ url_for('edit_tip', tip_id=tip._id)}}" class="btn btn-tips-update btn-sm">Edit</a>
-                        </div>
-                    </div>
-                {% endif %}
-            {% endfor %}
-        </div>
-    </div>
+   <div class="row">
+      <div class="col-lg-8 offset-lg-2 text-center">
+         {% for tip in tips %}
+         {% if session.user|lower == tip.created_by|lower %}
+         <div class="card mytips-suggestion-card">
+            <div class="card-body">
+               <h5 class="card-title">{{ tip.tip_suggestion }}</h5>
+               <h6 class="card-subtitle mb-2 text-muted">{{ tip.category_name }}</h6>
+               <p class="card-text">{{ tip.tip_details }}</p>
+               <p class="fst-italic">This tip was shared by {{ tip.created_by }}</p>
+               <a href="{{ url_for('delete_tip', tip_id=tip._id)}}" class="btn btn-cancel btn-sm">Delete</a>
+               <a href="{{ url_for('edit_tip', tip_id=tip._id)}}" class="btn btn-tips-update btn-sm">Edit</a>
+            </div>
+         </div>
+         {% endif %}
+         {% endfor %}
+      </div>
+   </div>
 </div>
 <br>
+<!--Option to log out -->
 <div class="container my-tips-section">
-    <!--div class="row">
-        <div class="col-lg-8 offset-lg-2  my-tips-heading text-center">
-            <h3>{{ username }} have you thought of a tip you'd like to share with our remote community?</h3>
-        </div>
-    </div-->
-    <div class="row">
-        <div class="col-lg-8 offset-lg-2  text-center">
-            <p>Time to log out?</p>
-            <a class="btn btn-logout btn-sm" href="{{url_for('log_out')}}">Log Out</a>
-        </div>
-    </div>
+   <div class="row">
+      <div class="col-lg-8 offset-lg-2  text-center">
+         <p>Time to log out?</p>
+         <a class="btn btn-logout btn-sm" href="{{url_for('log_out')}}">Log Out</a>
+      </div>
+   </div>
 </div>
 </div>
-
-{% endblock %}  
+{% endblock %}

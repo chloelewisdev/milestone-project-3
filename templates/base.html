@@ -1,111 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.css" integrity="sha512-9iWaz7iMchMkQOKA8K4Qpz6bpQRbhedFJB+MSdmJ5Nf4qIN1+5wOVnzg5BQs/mYH3sKtzY+DOgxiwMz8ZtMCsw==" crossorigin="anonymous" type="text/css"/>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
-    {% block styles %}
-    {% endblock %}
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" type="text/css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.css" integrity="sha512-9iWaz7iMchMkQOKA8K4Qpz6bpQRbhedFJB+MSdmJ5Nf4qIN1+5wOVnzg5BQs/mYH3sKtzY+DOgxiwMz8ZtMCsw==" crossorigin="anonymous" type="text/css"/>
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+      {% block styles %}
+      {% endblock %}
 
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='images/apple-touch-icon.png') }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='images/favicon-32x32.png') }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='images/favicon-16x16.png') }}">
-    <link rel="manifest" href="{{ url_for('static', filename='images/site.webmanifest') }}">
+      <!--Favicon -->
+      <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='images/apple-touch-icon.png') }}">
+      <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='images/favicon-32x32.png') }}">
+      <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='images/favicon-16x16.png') }}">
 
-    <title>Remote</title>
-</head>
+      <!--Link to local CSS file-->
+      <link rel="manifest" href="{{ url_for('static', filename='images/site.webmanifest') }}">
 
-<body class="d-flex flex-column">
-    <div id="page-content">
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <title>Remote</title>
+   </head>
+   <body class="d-flex flex-column">
+      <div id="page-content">
+         <!--Basic navbar from Bootstrap-->
+         <nav class="navbar navbar-expand-lg navbar-light fixed-top">
             <a class="navbar-brand" href="{{url_for('index')}}">REMOTE</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
-                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+               aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarText">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link {% block nav_home %}{% endblock %}" href="{{url_for('index')}}">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% block nav_tips %}{% endblock %}" href="{{url_for('tips')}}">Tips</a>
-                    </li>
-                    {% if session.user %}
-                    <li class="nav-item">
-                        <a class="nav-link {% block nav_addtips %}{% endblock %}" href="{{url_for('add_tip')}}">Share
-                            Tips</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% block nav_mytips %}{% endblock %}"
-                            href="{{url_for('my_tips', username=session['user'])}}">My Tips</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{url_for('log_out')}}">Log Out</a>
-                    </li>
-                    {% else %}
-                    <li class="nav-item">
-                    <a class="nav-link {% block nav_login %}{% endblock %}" href="{{url_for('log_in')}}">Log In</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% block nav_signup %}{% endblock %}" href="{{url_for('sign_up')}}">Sign Up</a>
-                    </li>
-                    {% endif %}
-                </ul>
+               <ul class="navbar-nav">
+                  <li class="nav-item">
+                     <a class="nav-link {% block nav_home %}{% endblock %}" href="{{url_for('index')}}">Home</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link {% block nav_tips %}{% endblock %}" href="{{url_for('tips')}}">Tips</a>
+                  </li>
+                  <!--Displays extra options in nav if the user is logged in-->
+                  {% if session.user %}
+                  <li class="nav-item">
+                     <a class="nav-link {% block nav_addtips %}{% endblock %}" href="{{url_for('add_tip')}}">Share
+                     Tips</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link {% block nav_mytips %}{% endblock %}"
+                        href="{{url_for('my_tips', username=session['user'])}}">My Tips</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="{{url_for('log_out')}}">Log Out</a>
+                  </li>
+                  {% else %}
+                  <li class="nav-item">
+                     <a class="nav-link {% block nav_login %}{% endblock %}" href="{{url_for('log_in')}}">Log In</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link {% block nav_signup %}{% endblock %}" href="{{url_for('sign_up')}}">Sign Up</a>
+                  </li>
+                  {% endif %}
+               </ul>
             </div>
-        </nav>
-        <section class="flash-message">
+         </nav>
+
+         <!--Flash messages to be shown at the top of each html page-->
+         <section class="flash-message">
             <div class="row">
-                <div class="col-12">
-                    {% with messages = get_flashed_messages() %}
-                    {% if messages %}
-                    {% for message in messages %}
-                    <div class="row flashes">
-                        <h4 class="flash-message-style">{{ message }}</h4>
-                    </div>
-                    {% endfor %}
-                    {% endif %}
-                    {% endwith %}
-                </div>
+               <div class="col-12">
+                  {% with messages = get_flashed_messages() %}
+                  {% if messages %}
+                  {% for message in messages %}
+                  <div class="row flashes">
+                     <h4 class="flash-message-style">{{ message }}</h4>
+                  </div>
+                  {% endfor %}
+                  {% endif %}
+                  {% endwith %}
+               </div>
             </div>
-        </section>
-    
-        <main class="container">
-        
+         </section>
+
+         <main class="container">
             <!--Scroll to top button-->
             <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-
+            <!--Block content to be inserted on each html page -->
             {% block content %}
             {% endblock %}
+         </main>
+      </div>
 
-        </main>
-
-    </div>
-    
-    <!--Sticky footer-->
-    <footer id="sticky-footer" class="py-4">
-        <div class="container text-center">
+      <!--Sticky footer-->
+      <footer id="sticky-footer" class="py-4">
+         <div class="container text-center">
             <div class="row">
-                <div class="col social-icons">
-                    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-                </div>
+               <div class="col social-icons">
+                  <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                  <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+               </div>
             </div>
-        </div>
-    </footer>
-    
+         </div>
+      </footer>
 
       <!--Scripts for Hamburger Icon from Eventyret_mentor on Code Institute Slack Community-->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    
-    <!--Local scripts -->  
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-    {% block scripts %}
-    {% endblock %}
-    
-    </body>
+
+      <!--Local scripts -->  
+      <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+      {% block scripts %}
+      {% endblock %}
+      
+   </body>
 </html>
