@@ -10,7 +10,7 @@ The idea for this website came to me as due to the Coronavirus Pandemic, most pe
 
 This was the third of four Milestone Projects that made up the Full Stack Web Development Program at The Code Institute. The main requirements were to build site a site using HTML, CSS, JavaScript, Python + Flask and MongoDB. 
 
-Click [here]( https://ms3-remote-app.herokuapp.com/index/) to view the website live. 
+Click [here](https://ms3-remote-app.herokuapp.com/index/) to view the website live. 
 
 ## Table of Contents:
 
@@ -118,16 +118,14 @@ I decided that a 'Back To Top' button on the site would be useful, and thought i
 
 I decided a clean white background with a box layout would be a good way to present information in the different sections, allowing enough space between text, images and any key features. 
 
-The wireframes can be viewed on [Figma](https://www.figma.com/file/6uPCcGmqEznG0EXndWxXOn/Milestone-Project-2?node-id=1%3A2)
+The wireframes can be viewed on [Figma](XXX)
 
 ### Surface plane:
 
 I next moved on to the design work. 
 
 * **Colours & Logo:** 
-Colours were an important choice – I wanted the website to have a modern, colourful and friendly feel. I didn’t want to use images of people working from home, because I didn’t want users to see an image they couldn’t identify with and therefore lessen the appeal of the website. I decided graphics and illustrations would therefore be a good way to provide some colourful content to the site. After researching different sites and I decided to use DrawKit. 
-
-The images I chose from DrawKit then enabled me to the colour palette for the website, including the logo. I decided the logo would be the word ‘REMOTE’, with wavy text decoration underneath – I thought this was simple but also fitted in well with the style of the graphics. 
+Colours were an important choice – I wanted the website to have a modern, colourful and friendly feel. I didn’t want to use images of people working from home, because I didn’t want users to see an image they couldn’t identify with and therefore lessen the appeal of the website. I decided graphics and illustrations would therefore be a good way to provide some colourful content to the site. After researching different sites and I decided to use DrawKit. The images I chose from DrawKit then enabled me to the colour palette for the website, including the logo. I decided the logo would be the word ‘REMOTE’, with wavy text decoration underneath – I thought this was simple but also fitted in well with the style of the graphics. 
 
 * **Typography:** I used Google Fonts to select the fonts for my project and decided on the font ‘Cabin’ – I thought this worked well when bold as a heading but also looked good when regular weight for the body text. 
 
@@ -138,7 +136,8 @@ The images I chose from DrawKit then enabled me to the colour palette for the we
 ## Existing features and Database Structure
 This project consists of seven different pages, three of which are only accessible to users once they have an account and have logged in.
 
-** Database Structure **
+**Database Structure**
+
 The data for this project is stored in my MongoDB database within three collections as follows:
 * Users - This collection stores the user's username and their encrypted password created when they signed up to Remote.
 * Categories - When a user creates a task, they can choose a category stored in this collection – currently there are 5 categories all stored under ‘category_name’: “Workspace”, “Exercise”, “Routine”, “Breaks” and “Positivity”. 
@@ -152,14 +151,12 @@ The data for this project is stored in my MongoDB database within three collecti
 * Although each page features different graphics, they are all designed with the same colour palette and are from the same illustrator for consistency.
 * **Active page on navbar**The active page becomes highlighted with a green colour to show the user which page they are on. 
 * **Flash messages** All flash messages appear under the nav bar with the same font and colour throughout the app for consistency.
-* **Home** - 
-* The user sees an image and introductory text explaining the purpose of the website. When scrolling down, the user is then presented with three different cards each containing a next step the user can take and accompanying text explaining each action – they can click on a button to view ‘Tips’ on the community tips board, they can click on ‘Sign Up’ if they want to add their own tips to work from home on the community board, or they can click on a button to ‘Log In’ if they have previously signed up and want to log in. 
+* **Home** - The user sees an image and introductory text explaining the purpose of the website. When scrolling down, the user is then presented with three different cards each containing a next step the user can take and accompanying text explaining each action – they can click on a button to view ‘Tips’ on the community tips board, they can click on ‘Sign Up’ if they want to add their own tips to work from home on the community board, or they can click on a button to ‘Log In’ if they have previously signed up and want to log in. 
 
-* **Tips** - This page welcomes the user to the community tips board with an image and then some introductory text. The user is then presented with all the different tips that have been shared by others, as well as a search feature at the top of the tips section. 
-
-The search feature enables the user to type in part or all of a word, click on the button ‘Search’ which then provides them with the results of their search (the tips containing the word they have searched for), or a message is displayed showing the user that there are no results. The user can then click to ‘Reset’ the search function which displays all of the tips again to the user so that they can do a fresh search if they wish. 
-
+* **Tips** - This page welcomes the user to the community tips board with an image and then some introductory text. The user is then presented with all the different tips that have been shared by others, as well as a search feature at the top of the tips section.   
 Each tip card displays a title, a category, more details about the tip, and the username of the person that has shared tip.  If the user is logged in, they are shown a ‘Delete’ button and an ‘Edit’ button on the tips they have shared on the board. By clicking the delete button, the logged in user removes the tip, and are shown a flash message confirming this. If the user wants to edit their tip, they can click ‘Edit’ and are then taken to a page which displays a form prefilled with their original tip. Here they can edit the tip and click ton ‘Save Update’, which updates the tip, takes the user back to the community Tips page, and confirms that their message has been updated with a flash message.
+
+* **Search** The searcg feature on the Tips page enables the user to type in part or all of a word, click on the button ‘Search’ which then provides them with the results of their search (the tips containing the word they have searched for), or a message is displayed showing the user that there are no results. The user can then click to ‘Reset’ the search function which displays all of the tips again to the user so that they can do a fresh search if they wish. 
 
 * **Log In** – This feature contains a log in form where an existing user can input their username and password to log in. If they enter the wrong password and/or username, they are shown a flash message telling the username that the details are incorrect and to try again. Users on this page that don’t yet have an account are prompted to sign up with a message and sign up button underneath the log in form.  Once users successfully log in, they are taken to the ‘My Tips’ page. 
 
@@ -167,7 +164,7 @@ Each tip card displays a title, a category, more details about the tip, and the 
 
 * **My Tips** - once the user is logged in, they are taken to the ‘My Tips’page and this feature is now displayed in the navbar, (otherwise hidden for users that don’t have an account). This page contains a feature that displays all of the tips that the user has shared so far. Within those tips, the user can edit them by clicking on an ‘Edit’ button which takes them to the Edit Tip page, or they can delete them by clicking on a ‘Delete’ button. The user’s username is shown at the top of the page so that they user knows that these tips are personal to them. Underneath the ‘My Tips’ feature shown on this page, the user is given the option to ‘Share Tips’, which is relevant to both users that have only just signed up with no tips and also those that have shared lots of tips and have something new they want to share. The ‘Share Tips’ page takes the user to ‘Share Tips’ page. Alternatively, next to the ‘Share Tips’ button, the user can click on the ‘Log Out’ button to log out if they wish. 
 
-* **Share Tips** - This page features a form with three fields – users are prompted to add a category, tip title and tip details. All fields are required in order to submit the form, if the user leaves a field blank they are shown a message asking them to complete the empty field.  Limits? When the user has finished adding their tip, they can click on the ‘Share’, which takes the user to the ‘Tips’ page, displays a flash message to the user so that they know their tip has been shared successfully, and the tip is added to the list of tips displayed on the Tips page. Alternatively, on the Share Tips page, if the user changes their mind and decides they no longer want to share a tip, they can click on a ‘Cancel’ button at the bottom of the form which directs the user back to the ‘Tips’ page.  
+* **Share Tips** - This page features a form with three fields – users are prompted to add a category, tip title and tip details. All fields are required in order to submit the form, if the user leaves a field blank they are shown a message asking them to complete the empty field. When the user has finished adding their tip, they can click on the ‘Share’, which takes the user to the ‘Tips’ page, displays a flash message to the user so that they know their tip has been shared successfully, and the tip is added to the list of tips displayed on the Tips page. Alternatively, on the Share Tips page, if the user changes their mind and decides they no longer want to share a tip, they can click on a ‘Cancel’ button at the bottom of the form which directs the user back to the ‘Tips’ page.  
 
 * **Edit Tip** - this page features a form where the user can edit a tip they have previously added. It is only available to users that have an account and that are logged in, and users can arrive at this feature by clicking on an ‘Edit’ button displayed on tips they have shared which are displayed on the Tips page or on the My Tips page. The user is presented with their tip already prefilled into the form, and they can click on any field to edit the information. Once complete, the user can click on ‘Save Update’ which takes the user back to the Tips page, displaying a message explaining the tip has been successfully updated, and the updated tip is displayed on the ‘tips board’.  Alternatively, on the Edit Tips feature, if the user changes their mind and decides they no longer want to edit a tip, they can click on a ‘Cancel’ button at the bottom of the form which directs the user back to the ‘Tips’ page.  
 
@@ -178,7 +175,7 @@ Each tip card displays a title, a category, more details about the tip, and the 
 ### Features to consider implementing in the future:
 
 * The Tips feature could be developed much further in the future. It would be good if each tip that was added contained a date, and then on the Tips page, the tips could be displayed in date order starting with the newest first. 
-* It would also be good if Tips feature contained pagination, because currently if lots of tips were added, the user would have to scroll a long way down the page to read them which isn’t necessarily good user experience.  The ‘Scroll to top’ hopefully helps the user for now but this would definitely be something to implement in the future. 
+* It would also be good if the Tips feature contained pagination, because currently if lots of tips were added, the user would have to scroll a long way down the page to read them which isn’t necessarily good user experience.  The ‘Scroll to top’ hopefully helps the user for now but this would definitely be something to implement in the future. 
 * It would also be useful if the user could search the tips by username, so this is something that would be great to add in the future. Then if the user finds certain tips shared by a particular user helpful, they would be able to search for just the tips just shared by that user.
 * It would be useful if the Profile page contained a section where the user could update their login details including username and password. 
 
@@ -276,7 +273,7 @@ If you would like to work on this project further you can clone it to your local
 5. Enter the following command and press 'Enter' to create your local clone:
 ```
 git clone https://github.com/chloelewisdev/milestone-project-3
-
+```
 6. Now create a Database that you intend to use for this cloned project with MongoDB.
 7. Return to the Terminal and enter the following to install all required dependencies:
 ```
@@ -346,7 +343,7 @@ The content of this website is entirely fictional and written by myself.
 
 ### Images
 
-The images are all from DrawKit, which is an open source of illustrations. I used the ‘Peach Illustration System’ collection, which included characters, backgrounds and more. More information can be found on their website: [DrawKit](https://www.drawkit.io/
+The images are all from DrawKit, which is an open source of illustrations. I used the ‘Peach Illustration System’ collection, which included characters, backgrounds and more. More information can be found on their website: [DrawKit](https://www.drawkit.io/)
 
 ### Acknowledgements
 
