@@ -11,20 +11,21 @@ if os.path.exists("env.py"):
 
 app = Flask(__name__)
 
-
+# Environment variables to store DB password
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
-
+# Route to index page as default
 @app.route("/")
 @app.route("/index")
 def index():
     return render_template("index.html")
 
 
+# Route to allow new users to sign up, hashing the password for security
 @app.route("/sign_up", methods=["GET", "POST"])
 def sign_up():
     if request.method == "POST":
@@ -33,7 +34,10 @@ def sign_up():
             {"username": request.form.get("username").lower()})
 
         if existing_user:
-            flash("Oops, that username already exists! Please try again with a different username")
+            flash(
+            "Oops, that username already exists!" +
+            "Please try again with a different username"
+            )
             return redirect(url_for("sign_up"))
 
         sign_up = {
@@ -42,7 +46,7 @@ def sign_up():
         }
         mongo.db.users.insert_one(sign_up)
 
-        # put the new user into 'session' cookie
+        # puts the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
         flash("Welcome! You have now signed up")
         return redirect(url_for("my_tips", username=session["user"]))
@@ -50,6 +54,8 @@ def sign_up():
     return render_template("signup.html")
 
 
+# Route to log in page
+# Upon successful login user is taken to the my tips page
 @app.route("/log_in", methods=["GET", "POST"])
 def log_in():
     if request.method == "POST":
@@ -64,8 +70,8 @@ def log_in():
                     session["user"] = request.form.get("username").lower()
                     flash("Welcome, {}".format(
                             request.form.get("username")))
-                    return redirect(url_for("my_tips", username=session["user"]))
-                    
+                    return redirect(url_for(
+                        "my_tips", username=session["user"]))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
@@ -79,19 +85,22 @@ def log_in():
     return render_template("login.html")
 
 
+# Route to log user out of site
 @app.route("/log_out")
 def log_out():
-	flash("You have now been logged out")
-	session.pop("user")
-	return redirect(url_for("log_in"))
+    flash("You have now been logged out")
+    session.pop("user")
+    return redirect(url_for("log_in"))
 
 
+# Route to tips page
 @app.route("/tips")
 def tips():
     tips = list(mongo.db.tips.find())
     return render_template("tips.html", tips=tips)
 
 
+# Route to allow user to search tips
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
@@ -109,6 +118,9 @@ def search():
     return render_template("tips.html", tips=tips, _anchor="tips-board")
 
 
+# Route to share tips page if the user is logged in
+# On completion user adds their tip to the database
+# On completion the user is then redirected to the main tips page
 @app.route("/add_tip", methods=["GET", "POST"])
 def add_tip():
     if request.method == "POST":
@@ -126,6 +138,9 @@ def add_tip():
     return render_template("add_tip.html", categories=categories)
 
 
+# Route to edit tip page if the user is logged in
+# On completion the tip is updated in the database
+# Once the user has updated their tip they are returned to main tips page
 @app.route("/edit_tip/<tip_id>", methods=["GET", "POST"])
 def edit_tip(tip_id):
     if request.method == "POST":
@@ -145,6 +160,8 @@ def edit_tip(tip_id):
     return render_template("edit_tip.html", tip=tip, categories=categories)
 
 
+# Route to enable logged in user to delete one of their tips
+# Once the user logs out they are redirected to the login page
 @app.route("/delete_tip/<tip_id>")
 def delete_tip(tip_id):
     mongo.db.tips.remove({"_id": ObjectId(tip_id)})
@@ -152,6 +169,7 @@ def delete_tip(tip_id):
     return redirect(url_for("tips"))
 
 
+# Route to my tips page for logged in user
 @app.route("/my_tips/<username>", methods=["GET", "POST"])
 def my_tips(username):
     username = mongo.db.users.find_one(
