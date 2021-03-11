@@ -88,6 +88,40 @@ body {
     background-color: #81d6be;
 }
 
+/*-------------------------------------------------------- Scroll to top button */
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 14px;
+  border: none;
+  outline: none;
+  background-color: #4c8474;
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+
+/*--------------------------------------------------------Flash Messages */
+
+.flash-message {
+    text-align: center;
+    font-weight: 700;
+    padding-top: 100px;
+}
+
+.flash-message-style {
+    color: #b47464;
+}
+
 /*--------------------------------------------------------Navbar*/
 
 .navbar {
@@ -115,23 +149,39 @@ body {
     font-weight: bolder;
 }
 
-/*ID used to stick footer to bottom of all html pages
-#container {
-    min-height:100%;
-    position:relative;
-}*/
+/*--------------------------------------------------------Footer*/
 
-
-.flash-message {
-    text-align: center;
-    font-weight: 700;
-    padding-top: 100px;
+#page-content {
+  flex: 1 0 auto;
 }
 
-.flash-message-style {
-    color: #b47464;
+#sticky-footer {
+    flex-shrink: 0;
+    background-color: #fbdfda;
+    color: dimgrey;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    margin-top: 10px;
 }
 
+.fa-facebook-f {
+    color: #4c8474;
+    font-size: 1.5rem;
+}
+
+.fa-facebook-f:hover{
+    color: #555;
+}
+
+.fa-instagram {
+    color: #4c8474;
+    font-size: 1.5rem;
+}
+
+.fa-instagram:hover{
+    color: #555;
+}
 /*--------------------------------------------------------index.html*/
 
 .index-main {
@@ -170,6 +220,7 @@ body {
     padding-top: 150px;
     }
 }
+
 .index-card-1 {
     background-color: #fbdc8e;
     padding-top: 10px;
@@ -186,76 +237,7 @@ body {
    
 }
 
-/*--------------------------------------------------------Footer*/
-
-#page-content {
-  flex: 1 0 auto;
-}
-
-#sticky-footer {
-    flex-shrink: 0;
-    background-color: #fbdfda;
-    color: dimgrey;
-    padding-top: 20px;
-    padding-left: 20px;
-    padding-bottom: 20px;
-    margin-top: 10px;
-}
-
-.fa-facebook-f {
-    color: #4c8474;
-    font-size: 1.5rem;
-}
-
-.fa-instagram {
-    color: #4c8474;
-    font-size: 1.5rem;
-}
-
-/*#footer {
-    background-color: #f9eae9;
-    padding: 10px;
-    margin-top: 20px;
-}
-
-
-.fa-facebook-f {
-    color: #4c8474;
-    font-size: 1.5rem;
-    padding: 10px;
-}
-
-.fa-instagram {
-    color: #4c8474;
-    font-size: 1.5rem;
-    padding: 10px;
-}*/
-
-
-/*-------------------------------------------------------- Scroll to top button */
-
-#myBtn {
-  display: none;
-  position: fixed;
-  bottom: 20px;
-  right: 30px;
-  z-index: 99;
-  font-size: 14px;
-  border: none;
-  outline: none;
-  background-color: #4c8474;
-  color: white;
-  cursor: pointer;
-  padding: 5px;
-  border-radius: 5px;
-}
-
-#myBtn:hover {
-  background-color: #555;
-}
-
 /*--------------------------------------------------------tips.html*/
-
 
 .tips {
     padding-top: 100px;
@@ -302,7 +284,6 @@ body {
     font-size: 30px;
     font-weight: bold;
 }
-
 
 /*--------------------------------------------------------add_tip.html*/
 
@@ -368,7 +349,6 @@ body {
     font-weight: 600;
 }
 
-
 .my-tips-section {
     padding-top: 20px;
 }
@@ -413,9 +393,6 @@ body {
     padding-top: 50px;
 }
 
-
-
 .sign-up-image {
     padding-top: 40px;
 }
-
