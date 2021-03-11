@@ -30,6 +30,8 @@ body {
 
 .btn-tips-search {
     background-color: #ab8de5;
+    margin-top: 10px;
+    margin-bottom: 10px;;
 }
 
 .btn-tips-search:hover{
@@ -38,6 +40,8 @@ body {
 
 .btn-cancel {
     background-color: #b47464;
+    margin-top: 10px;
+    margin-bottom: 10px;;
 }
 
 .btn-cancel:hover{
@@ -108,7 +112,6 @@ body {
 
 .active-menu {
     color: #4c8474 !important;
-    border-bottom: 2px solid #4c8474 !important;
     font-weight: bolder;
 }
 
@@ -153,6 +156,19 @@ body {
 
 .index-card-style {
     padding-top: 10px;
+}
+
+@media screen and (min-width: 768px) {
+    .index-card-style{
+    padding-left: 20px;
+    padding-right: 20px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .index-cards{
+    padding-top: 150px;
+    }
 }
 .index-card-1 {
     background-color: #fbdc8e;
@@ -258,12 +274,8 @@ body {
 @media screen and (max-width: 768px) {
     .tips-title{
     text-align: center;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .tips-title {
     padding-top: 30px;
+
     }
 }
 
@@ -271,6 +283,17 @@ body {
     padding: 50px;
 }
 
+@media screen and (max-width: 560px) {
+    .tips-search {
+    padding: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .tips-search {
+    padding: 5px;
+    }
+}
 .tip-suggestion-card {
     padding-top: 10px;
     background-color: #fbdc8e;
@@ -280,7 +303,6 @@ body {
     font-size: 30px;
     font-weight: bold;
 }
-
 
 
 /*--------------------------------------------------------add_tip.html*/
@@ -304,12 +326,17 @@ body {
 
 @media screen and (max-width: 540px) {
     .add-tip-form {
-        width: 350px;
+        width: 300px;
         padding-right:10px;
         padding-left:10px;
     }
 }
 
+.form-select{
+    margin-bottom: 1rem!important;
+}
+
+/*--------------------------------------------------------login.html*/
 
 
 .login-form {
