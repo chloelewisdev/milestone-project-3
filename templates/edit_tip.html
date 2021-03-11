@@ -12,7 +12,7 @@
     <div class="row">
         <div class="col-lg-8 offset-lg-2 text-left mx-auto">
             <form method="POST" action="{{ url_for('edit_tip', tip_id = tip._id)}}">
-                <select class="form-select validate" id="category_name" name="category_name" aria-label="Default select example">
+                <select class="form-select validate" id="category_name" name="category_name" aria-label="Default select example" required>
                     <option>Choose category</option>
                     {% for category in categories %}
                         {% if category.category_name == tip.category_name %}
@@ -23,14 +23,14 @@
                     {% endfor %}
                 </select>
                 <div class="mb-3">
-                    <label for="tip_suggestion" class="form-label label-style">Suggestion</label>
+                    <label for="tip_suggestion" class="form-label label-style">Tip Title</label>
                     <input type="text" class="form-control" id="tip_suggestion" name="tip_suggestion" 
-                    value="{{ tip.tip_suggestion }}" minlength="5" maxlength="25" required>
+                    value="{{ tip.tip_suggestion }}" minlength="5" maxlength="70" required>
                 </div>
                 <div class="mb-3">
-                    <label for="tip_details" class="form-label label-style">Details</label>
+                    <label for="tip_details" class="form-label label-style">Tip Details</label>
                     <textarea class="form-control" id="tip_details" name="tip_details" 
-                    minlength="5" maxlength="100" required>
+                    minlength="5" maxlength="150" required>
                     {{- tip.tip_details -}}
                 </textarea>
                 </div>   

@@ -29,21 +29,21 @@
             <form method="POST" action="{{ url_for('add_tip')}}">
                 <label for="category_name" class="form-label">Choose category</label>
                 <select class="form-select validate" id="category_name" name="category_name"
-                    aria-label="Default select example">
+                    aria-label="Default select example" required>
                     <option selected></option>
                     {% for category in categories %}
                     <option value="{{ category.category_name }}">{{ category.category_name }}</option>
                     {% endfor %}
                 </select>
                 <div class="mb-3">
-                    <label for="tip_suggestion" class="form-label">Suggestion</label>
+                    <label for="tip_suggestion" class="form-label">Tip Title</label>
                     <input type="text" class="form-control" id="tip_suggestion" name="tip_suggestion" minlength="5"
-                        maxlength="25" required>
+                        maxlength="70" required>
                 </div>
                 <div class="mb-3">
-                    <label for="tip_details" class="form-label">Details</label>
+                    <label for="tip_details" class="form-label">Tip Details</label>
                     <input type="text" class="form-control" id="tip_details" name="tip_details" minlength="5"
-                        maxlength="100" required>
+                        maxlength="150" required>
                 </div>
                 <div class="text-center">
                 <button type="submit" class="btn btn-share-tip">Share!</button>
