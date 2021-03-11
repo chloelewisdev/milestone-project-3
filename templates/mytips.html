@@ -12,11 +12,21 @@
         </div>
     </div>
     <div class="row">
-        <div class="col my-tips-heading text-center">
-            <h3>{{ username }}'s top tips for working remotely:</h3>
+        <div class="col-lg-8 offset-lg-2  my-tips-heading text-center">
+            <h3>{{ username }} have you thought of a tip you'd like to share with our remote community?</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2  text-center">
+            <a class="btn btn-share-tip btn-lg" href="{{url_for('add_tip')}}">Share Tip</a>
         </div>
     </div>
     <br>
+    <div class="row">
+        <div class="col my-tips-heading text-center">
+            <h4>{{ username }}'s top tips for working remotely:</h4>
+        </div>
+    </div>
 </div>
 <div class="container">
     <div class="row">
@@ -40,15 +50,15 @@
 </div>
 <br>
 <div class="container my-tips-section">
-    <div class="row">
+    <!--div class="row">
         <div class="col-lg-8 offset-lg-2  my-tips-heading text-center">
-            <h3>{{ username }} have you thought of another tip you'd like to share with our remote community?</h3>
+            <h3>{{ username }} have you thought of a tip you'd like to share with our remote community?</h3>
         </div>
-    </div>
+    </div-->
     <div class="row">
         <div class="col-lg-8 offset-lg-2  text-center">
-            <a class="btn btn-share-tip btn-lg" href="{{url_for('add_tip')}}">Share More Tips!</a>
-            <a class="btn btn-logout btn-lg" href="{{url_for('log_out')}}">Log Out</a>
+            <p>Time to log out?</p>
+            <a class="btn btn-logout btn-sm" href="{{url_for('log_out')}}">Log Out</a>
         </div>
     </div>
 </div>
