@@ -319,7 +319,7 @@ echo web: python app.py > Procfile
 ```
 git add 
 ```
-git commit -m ""
+git commit -m 
 ```
 6. With these files committed, I logged in to Heroku using this command and entered my details at the prompt:
 ```
