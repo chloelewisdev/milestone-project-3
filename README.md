@@ -81,6 +81,7 @@ The website should be professional and user-friendly, providing an easy navigati
 * App is visually appealing, and fully responsive on all devices and screen sizes
 
 ### Scope plane:
+
 The key features of the website were developed based on the main aims of the website and user needs, as well as my current skill-set of HTML, CSS, JavaScript, Python + Flask and MongoDB. Users should be able to do the following on the website:
 
 * View a clear path on the homepage to either view the community tips board, sign up to Remote to begin sharing remote working tips, or log in. 
@@ -128,15 +129,13 @@ Colours were an important choice – I wanted the website to have a modern, colo
 
 The images I chose from DrawKit then enabled me to the colour palette for the website, including the logo. I decided the logo would be the word ‘REMOTE’, with wavy text decoration underneath – I thought this was simple but also fitted in well with the style of the graphics. 
 
-Insert colour palette. 
-
 * **Typography:** I used Google Fonts to select the fonts for my project and decided on the font ‘Cabin’ – I thought this worked well when bold as a heading but also looked good when regular weight for the body text. 
 
 * **Images:**  The images used on the website are all from DrawKit, which is an open source of free illustrations updated every week. I downloaded the Peach Illustration System for this website from DrawKit, as it included illustrations of people working from home, as well as different scenes, and technology illustrations which I thought would be useful. I decided to include a mix of illustrations of people working at home, technology such as an artistic illustration of a computer, as well as illustrations of plants which created a ‘home’ feel.
 
 * **Layout:** I decided to keep the background clean, spacious and fresh by using a white background for the pages. This then enabled me to add different colours as a background to certain areas of content, such as a the tips board, and the form for adding a tip. 
 
-## Existing features
+## Existing features and Database Structure
 This project consists of seven different pages, three of which are only accessible to users once they have an account and have logged in.
 
 ** Database Structure **
@@ -162,8 +161,6 @@ The search feature enables the user to type in part or all of a word, click on t
 
 Each tip card displays a title, a category, more details about the tip, and the username of the person that has shared tip.  If the user is logged in, they are shown a ‘Delete’ button and an ‘Edit’ button on the tips they have shared on the board. By clicking the delete button, the logged in user removes the tip, and are shown a flash message confirming this. If the user wants to edit their tip, they can click ‘Edit’ and are then taken to a page which displays a form prefilled with their original tip. Here they can edit the tip and click ton ‘Save Update’, which updates the tip, takes the user back to the community Tips page, and confirms that their message has been updated with a flash message.
 
-
- 
 * **Log In** – This feature contains a log in form where an existing user can input their username and password to log in. If they enter the wrong password and/or username, they are shown a flash message telling the username that the details are incorrect and to try again. Users on this page that don’t yet have an account are prompted to sign up with a message and sign up button underneath the log in form.  Once users successfully log in, they are taken to the ‘My Tips’ page. 
 
 * **Sign Up** - This feature contains a form where the user can input a username and password in order to create an account. If they enter a username that already exists, they are shown a message explaining this and asking them to try again. Once the user clicks on ‘Sign Up’, the user is taken to the ‘My Tips’ page, where they can begin sharing their tips with the community. Users on this page that already have an account are prompted to log in with a message and a log in button underneath the sign up form.  
@@ -171,7 +168,6 @@ Each tip card displays a title, a category, more details about the tip, and the 
 * **My Tips** - once the user is logged in, they are taken to the ‘My Tips’page and this feature is now displayed in the navbar, (otherwise hidden for users that don’t have an account). This page contains a feature that displays all of the tips that the user has shared so far. Within those tips, the user can edit them by clicking on an ‘Edit’ button which takes them to the Edit Tip page, or they can delete them by clicking on a ‘Delete’ button. The user’s username is shown at the top of the page so that they user knows that these tips are personal to them. Underneath the ‘My Tips’ feature shown on this page, the user is given the option to ‘Share Tips’, which is relevant to both users that have only just signed up with no tips and also those that have shared lots of tips and have something new they want to share. The ‘Share Tips’ page takes the user to ‘Share Tips’ page. Alternatively, next to the ‘Share Tips’ button, the user can click on the ‘Log Out’ button to log out if they wish. 
 
 * **Share Tips** - This page features a form with three fields – users are prompted to add a category, tip title and tip details. All fields are required in order to submit the form, if the user leaves a field blank they are shown a message asking them to complete the empty field.  Limits? When the user has finished adding their tip, they can click on the ‘Share’, which takes the user to the ‘Tips’ page, displays a flash message to the user so that they know their tip has been shared successfully, and the tip is added to the list of tips displayed on the Tips page. Alternatively, on the Share Tips page, if the user changes their mind and decides they no longer want to share a tip, they can click on a ‘Cancel’ button at the bottom of the form which directs the user back to the ‘Tips’ page.  
-
 
 * **Edit Tip** - this page features a form where the user can edit a tip they have previously added. It is only available to users that have an account and that are logged in, and users can arrive at this feature by clicking on an ‘Edit’ button displayed on tips they have shared which are displayed on the Tips page or on the My Tips page. The user is presented with their tip already prefilled into the form, and they can click on any field to edit the information. Once complete, the user can click on ‘Save Update’ which takes the user back to the Tips page, displaying a message explaining the tip has been successfully updated, and the updated tip is displayed on the ‘tips board’.  Alternatively, on the Edit Tips feature, if the user changes their mind and decides they no longer want to edit a tip, they can click on a ‘Cancel’ button at the bottom of the form which directs the user back to the ‘Tips’ page.  
 
@@ -197,7 +193,6 @@ Each tip card displays a title, a category, more details about the tip, and the 
     * The language used to style the HTML5 elements according to the design colour scheme.
 - JavaScript
     * The language used to make the app interactive
-
 - [jQuery](https://jquery.com/)
     * I used the jQuery library to help write the JavaScript code used in this project
 - Python
@@ -246,10 +241,6 @@ part of the course
 * [CSS-Tricks](https://css-tricks.com/) - General resource
 * [Youtube](https://www.youtube.com/) - General resource
 * [Am I Responsive](http://ami.responsivedesign.is/) - Responsive website mockup image generator.
-
-
-
-
 
 
 ## Testing:
@@ -329,8 +320,7 @@ echo web: python app.py > Procfile
 ```
 5. I then committed these new files with the following:
 ```
-git add .
-```
+git add 
 ```
 git commit -m ""
 ```
