@@ -118,7 +118,7 @@ I decided that a 'Back To Top' button on the site would be useful, and thought i
 
 I decided a clean white background with a box layout would be a good way to present information in the different sections, allowing enough space between text, images and any key features. 
 
-The wireframes can be viewed on [Figma](XXX)
+The wireframes can be viewed on [Figma](https://www.figma.com/file/giUuD5vECYMz4Z99Vt3HHw/Milestone-3?node-id=0%3A1)
 
 ### Surface plane:
 
@@ -134,7 +134,7 @@ Colours were an important choice – I wanted the website to have a modern, colo
 * **Layout:** I decided to keep the background clean, spacious and fresh by using a white background for the pages. This then enabled me to add different colours as a background to certain areas of content, such as a the tips board, and the form for adding a tip. 
 
 ## Existing features and Database Structure
-This project consists of seven different pages, three of which are only accessible to users once they have an account and have logged in.
+This project consists of seven different pages in total, three of which are only accessible to users once they have an account and have logged in.
 
 **Database Structure**
 
@@ -176,7 +176,6 @@ Each tip card displays a title, a category, more details about the tip, and the 
 
 * The Tips feature could be developed much further in the future. It would be good if each tip that was added contained a date, and then on the Tips page, the tips could be displayed in date order starting with the newest first. 
 * It would also be good if the Tips feature contained pagination, because currently if lots of tips were added, the user would have to scroll a long way down the page to read them which isn’t necessarily good user experience.  The ‘Scroll to top’ hopefully helps the user for now but this would definitely be something to implement in the future. 
-* It would also be useful if the user could search the tips by username, so this is something that would be great to add in the future. Then if the user finds certain tips shared by a particular user helpful, they would be able to search for just the tips just shared by that user.
 * It would be useful if the Profile page contained a section where the user could update their login details including username and password. 
 
 
@@ -215,9 +214,9 @@ Each tip card displays a title, a category, more details about the tip, and the 
 
 ### Other tools used
 - [Figma](https://www.figma.com/) 
-    * Figma helped me design my project, by creating wireframes for desktop, tablet and mobile devices. 
+    * I used Figma to create wireframes for the project for desktop, tablet and mobile devices. 
 - [FontAwesome](https://fontawesome.com/) 
-    * I relied on free FontAwesome icons, including a copy icon, different types of arrows and a 'tick' to show items as complete.
+    * I used social media icons for Twitter, Instagram and Facebook
 - [DrawKit](https://www.drawkit.io/) 
     * This was the source of all graphics and illustrations used on the website. 
 - [Google Fonts](https://fonts.google.com/)
@@ -254,11 +253,9 @@ Testing documentation can be found on a separate document [here](https://github.
 
 ## Deployment
 
-This project was developed using Gitpod as the chosen IDE and GitHub as a remote repository. 
+This project was developed using Gitpod and deployed on Heroku: [Remote: View Live Website] http://ms3-remote-app.herokuapp.com/index/)
 
-The deployed project can be viewed on the following link: [Remote: Live Website] http://ms3-remote-app.herokuapp.com/index/)
-
-The project's GitHub repository can be viewed with the following link: [Remote: GitHub Repository]( https://github.com/chloelewisdev/milestone-project-3
+The GitHub repository for the project can be viewed with the following link: [Remote: GitHub Repository]( https://github.com/chloelewisdev/milestone-project-3
 
 ### Local deployment
 

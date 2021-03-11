@@ -8,6 +8,13 @@ body {
   font-family: 'Cabin', sans-serif;
 }
 
+.btn {
+    color: #ffffff;
+}
+
+.btn:hover{
+    color: #ffffff;
+}
 /*--------------------------------------------------------Navbar*/
 
 .navbar {
@@ -256,6 +263,10 @@ body {
     background-color: #ab8de5;
 }
 
+.btn-login:hover{
+    background-color: #d4c3f5;
+}
+
 /*--------------------------------------------------------mytips.html*/
 
 .login-image {
@@ -343,3 +354,4 @@ body {
 .sign-up-image {
     padding-top: 40px;
 }
+

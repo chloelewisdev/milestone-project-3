@@ -101,11 +101,12 @@ def search():
         "$or": [
             {"category_name": query_string}, 
             {"tip_suggestion": query_string},
-            {"tip_details": query_string}
+            {"tip_details": query_string},
+            {"created_by": query_string}
             ]
     }))
 
-    return render_template("tips.html", tips=tips)
+    return render_template("tips.html", tips=tips, _anchor="tips-board")
 
 
 @app.route("/add_tip", methods=["GET", "POST"])
@@ -158,7 +159,11 @@ def my_tips(username):
 
     if session["user"]:
         tips = list(mongo.db.tips.find().sort("_id", 1))
-        return render_template("mytips.html", username=username, tips=tips)
+        return render_template(
+            "mytips.html", 
+            username=username.title(), 
+            tips=tips
+        )
 
     return redirect(url_for("log_in"))
 
