@@ -119,6 +119,7 @@ Finally on lines 33, 112, 185 and 186 I could see that there was a warning of �
 
 #### Issues found from manual testing:
 I realised that when the user signed up, they were taken to the ‘My Tips’page which showed a ‘Welcome back’ message, and asked the user if they wanted to share ‘more’ tips. Therefore for user experience I made sure the My Tips page would be appropriate for new users who had just signed up and also those who had logged in by tweaking the text. 
+I also found that when I did a search on the Tips page, if I entered a search with a space at the end of the word I was searching or part of the word I was searching, the search did not bring up any results. I was unable to resolve this unfortunately due to time constraints of the project.
 
 ### Testing on different browsers:
 I manually tested the website on the following browsers:
