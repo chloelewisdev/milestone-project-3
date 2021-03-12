@@ -10,7 +10,7 @@ The idea for this website came to me as due to the Coronavirus Pandemic, most pe
 
 This was the third of four Milestone Projects that made up the Full Stack Web Development Program at The Code Institute. The main requirements were to build site a site using HTML, CSS, JavaScript, Python + Flask and MongoDB. 
 
-Click [here](https://ms3-remote-app.herokuapp.com/index/) to view the website live. 
+Click [here](http://ms3-remote-app.herokuapp.com/index) to view the website live. 
 
 ## Table of Contents:
 
