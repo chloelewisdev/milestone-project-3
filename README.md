@@ -241,7 +241,7 @@ part of the course
 
 ## Testing:
 
-Testing documentation can be found on a separate document [here](https://github.com/chloelewisdev/milestone-project-2/blob/master/assets/docs/testing.md)
+Testing documentation can be found on a separate document [here](https://github.com/chloelewisdev/milestone-project-3/blob/master/testing.md)
 
 - [W3C Markup Validation Service](https://validator.w3.org/) 
     * This was a great tool throughout the project to check whether there were any errors in my HTML and CSS code (as discussed in more detail in the Testing section).
