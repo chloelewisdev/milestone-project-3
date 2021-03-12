@@ -110,7 +110,7 @@ As well as the sign up and log in forms, points of contact for users would also 
 
 At this stage I was ready to put together wireframes. I used Figma for these, creating wireframes for the website on desktop, tablet and mobile all showing the five main sections. 
 
-I wanted to make sure it would be easy for users to navigate between the different sections within the one page, and therefore I decided it would be essential to create a fixed nav, as well as a Hamburger icon for smaller devices so that the user could easily choose to move to a different section on the site if they wished. 
+I wanted to make sure it would be easy for users to navigate between the pages, and therefore I decided it would be essential to create a fixed nav, as well as a Hamburger icon for smaller devices so that the user could easily choose to move to a different section on the site if they wished. 
 
 I wanted to ensure there would be a sticky footer as I knew on many pages there wouldn’t be a lot of content and I wanted this to still be a positive user experience. 
 
@@ -257,15 +257,17 @@ This project was developed using Gitpod and deployed on Heroku: [Remote: View Li
 
 The GitHub repository for the project can be viewed with the following link: [Remote: GitHub Repository]( https://github.com/chloelewisdev/milestone-project-3
 
+The Code Institute Mini Project (Task Manager) outlined the steps to be taken for deployment and were used to deploy this project.
+
 ### Local deployment
 
 If you would like to work on this project further you can clone it to your local machine using the following steps:
 
-1. Scroll to the top of this repository and click on the "clone or download button"
+1. You can scroll to the top of this repository and click on the "clone or download button"
 2. Decide whether you want to clone the project using HTTPS or an SSH key and do the following:
     * HTTPS: click on the checklist icon to the right of the URL to copy it
     * SSH key: first click on 'Use SSH' then click on the same icon as above
-3. Open a new Terminal window in your IDE of choice
+3. Open a new Terminal window in your development environment of choice
 4. Change the current working directory to the location where you want the cloned directory.
 5. Enter the following command and press 'Enter' to create your local clone:
 ```
@@ -290,9 +292,9 @@ python3 app.py
 
 You can find both the source of this information and learn more about the process with the following link: [Cloning a Repository](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
 
-### Deploying this project to Heroku 
+### Deploying Remote - Code Institute Milestone 3 project to Heroku 
 
-To deploy the project to Heroku, I used the following steps:
+To deploy the project to Heroku, I firstly ensured I had created a new repository within GitHub, and then I did the following:
 
 1. I created a Heroku account, signed in and created a new app with a unique name that had not already been taken (this project uses 'ms3-move-on'). I then set the region to the closest to me: 'Europe'.
 2. With the app created, I went to the 'Settings' tab and clicked the 'Reveal Config Variables' button. From here, I input the following values:
@@ -304,32 +306,32 @@ PORT: 5000
 (Note: within the MONGO_URI value, I replaced the 'username','password', 'cluster_name' and 'database_name' with my specific database values. They are kept private for security reasons.)
 
 
-3. In Gitpod, I created a requirements.txt file with the following command:
+3. In Gitpod, I created a requirements.txt file:
 ```
 pip3 freeze --local > requirements.txt
 ```
-4. I then created a Procfile with the following content within (making sure that 'Procfile' was written with a capitalized 'P'):
+4. Next, I created a Procfile and then ensured that there was no extra line after the first line as this can confuse Heroku:
 ```
 echo web: python app.py > Procfile
 ```
-5. I then committed these new files with the following:
+5. I then pushed these new files to GitHub with the following:
 ```
 git add
 git commit -m 
 ```
-6. With these files committed, I logged in to Heroku using this command and entered my details at the prompt:
-```
-heroku login
-```
-7. Once logged in, I linked my Heroku app created above as the remote repository with this command:
-```
-heroku git:remote -a ms3-move-on
-```
-8. I then completed the deployment by pushing the projekt to Heroku:
-```
-git push heroku master
-```
-9. This completed the process of deploying the project to Heroku. Once deployed, I continued to push all changes made to the project to Heroku throughout the remaining development process.
+6. I then logged in to Heroku, and selected 'Created new app', I then gave the app a unique name and selected my closest region.
+
+7. Within the 'Deployment Method' section of Heroku, I linked to my GitHub profile and repo name and clicked on 'Connect'.
+
+8. I then selected "Reveal Config Vars" in the 'Settings' section, and added the relevant key/value information from the my env.py (IP, PORT, MONGO_URI, MONGO_DBNAME, SECRET_KEY) file making sure that there were not quotation marks used.
+
+9. Selected "Deploy" from the Heroku App menu and scrolled down the page and selected "Enable Automatic Deployment".
+
+10. Selected Master Branch under "Branch Selected" and clicked "Deploy Branch".
+
+11. Once site was deployed, clicked "View" to launch the app and be able to view it within the browser.
+
+12. This completed the process of deploying the project to Heroku. Once deployed, I continued to push all changes made to the project to Heroku throughout the rest of the development process.
 
 ## Credits
 
