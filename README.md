@@ -33,7 +33,7 @@ Click [here](http://ms3-remote-app.herokuapp.com/index) to view the website live
 
 * [Credits](#Credits)
     * [Content](#Content)
-    * [Media](#Media)
+    * [Images](#Images)
 
 * [Acknowledgements](#Acknowledgements)
 
@@ -61,7 +61,7 @@ I started the UX process by creating the User Stories above which helped me work
 The website should be professional and user-friendly, providing an easy navigation journey to reach different sections with ease. 
 
 **Project goals:**
-* To create a community area where people can view tips and suggestions shared by others about working remotely. The user can view these tips and benefit from the app without having to sign up or log in, therefore making the app 
+* To create a community area where people can view tips and suggestions shared by others about working remotely. 
 * To enable new users to be able to sign up, and then share their own tips easily on the community tips board if they wish
 * For users who have already signed up previously, to be able to log in with ease
 * For users that are logged in, to be able to easily share, delete and edit a tip from the community board.
@@ -133,7 +133,7 @@ Colours were an important choice – I wanted the website to have a modern, colo
 
 * **Layout:** I decided to keep the background clean, spacious and fresh by using a white background for the pages. This then enabled me to add different colours as a background to certain areas of content, such as a the tips board, and the form for adding a tip. 
 
-## Existing features and Database Structure
+## Existing features 
 This project consists of seven different pages in total, three of which are only accessible to users once they have an account and have logged in.
 
 **Database Structure**
@@ -156,13 +156,13 @@ The data for this project is stored in my MongoDB database within three collecti
 * **Tips** - This page welcomes the user to the community tips board with an image and then some introductory text. The user is then presented with all the different tips that have been shared by others, as well as a search feature at the top of the tips section.   
 Each tip card displays a title, a category, more details about the tip, and the username of the person that has shared tip.  If the user is logged in, they are shown a ‘Delete’ button and an ‘Edit’ button on the tips they have shared on the board. By clicking the delete button, the logged in user removes the tip, and are shown a flash message confirming this. If the user wants to edit their tip, they can click ‘Edit’ and are then taken to a page which displays a form prefilled with their original tip. Here they can edit the tip and click ton ‘Save Update’, which updates the tip, takes the user back to the community Tips page, and confirms that their message has been updated with a flash message.
 
-* **Search** The searcg feature on the Tips page enables the user to type in part or all of a word, click on the button ‘Search’ which then provides them with the results of their search (the tips containing the word they have searched for), or a message is displayed showing the user that there are no results. The user can then click to ‘Reset’ the search function which displays all of the tips again to the user so that they can do a fresh search if they wish. 
+* **Search** The search feature on the Tips page enables the user to type in part or all of a word, click on the button ‘Search’ which then provides them with the results of their search (the tips containing the word they have searched for), or a message is displayed showing the user that there are no results. The user can then click to ‘Reset’ the search function which displays all of the tips again to the user so that they can do a fresh search if they wish. 
 
 * **Log In** – This feature contains a log in form where an existing user can input their username and password to log in. If they enter the wrong password and/or username, they are shown a flash message telling the username that the details are incorrect and to try again. Users on this page that don’t yet have an account are prompted to sign up with a message and sign up button underneath the log in form.  Once users successfully log in, they are taken to the ‘My Tips’ page. 
 
 * **Sign Up** - This feature contains a form where the user can input a username and password in order to create an account. If they enter a username that already exists, they are shown a message explaining this and asking them to try again. Once the user clicks on ‘Sign Up’, the user is taken to the ‘My Tips’ page, where they can begin sharing their tips with the community. Users on this page that already have an account are prompted to log in with a message and a log in button underneath the sign up form.  
 
-* **My Tips** - once the user is logged in, they are taken to the ‘My Tips’page and this feature is now displayed in the navbar, (otherwise hidden for users that don’t have an account). This page contains a feature that displays all of the tips that the user has shared so far. Within those tips, the user can edit them by clicking on an ‘Edit’ button which takes them to the Edit Tip page, or they can delete them by clicking on a ‘Delete’ button. The user’s username is shown at the top of the page so that they user knows that these tips are personal to them. Underneath the ‘My Tips’ feature shown on this page, the user is given the option to ‘Share Tips’, which is relevant to both users that have only just signed up with no tips and also those that have shared lots of tips and have something new they want to share. The ‘Share Tips’ page takes the user to ‘Share Tips’ page. Alternatively, next to the ‘Share Tips’ button, the user can click on the ‘Log Out’ button to log out if they wish. 
+* **My Tips** - once the user is logged in, they are taken to the ‘My Tips’page and this feature is now displayed in the navbar, (otherwise hidden for users that don’t have an account). This page contains a feature that displays all of the tips that the user has shared so far. Within those tips, the user can edit them by clicking on an ‘Edit’ button which takes them to the Edit Tip page, or they can delete them by clicking on a ‘Delete’ button. The user’s username is shown at the top of the page so that they user knows that these tips are personal to them. Underneath the ‘My Tips’ feature shown on this page, the user is given the option to ‘Share Tips’, which is relevant to both users that have only just signed up with no tips and also those that have shared lots of tips and have something new they want to share. The ‘Share Tips’ button takes the user to the Share Tips page. Alternatively, at the bottom of the page, the user can click on the ‘Log Out’ button to log out if they wish. 
 
 * **Share Tips** - This page features a form with three fields – users are prompted to add a category, tip title and tip details. All fields are required in order to submit the form, if the user leaves a field blank they are shown a message asking them to complete the empty field. When the user has finished adding their tip, they can click on the ‘Share’, which takes the user to the ‘Tips’ page, displays a flash message to the user so that they know their tip has been shared successfully, and the tip is added to the list of tips displayed on the Tips page. Alternatively, on the Share Tips page, if the user changes their mind and decides they no longer want to share a tip, they can click on a ‘Cancel’ button at the bottom of the form which directs the user back to the ‘Tips’ page.  
 
@@ -224,7 +224,7 @@ Each tip card displays a title, a category, more details about the tip, and the 
 - [Favicon](https://favicon.io/)
     * I used this website to create the favicon for the website 
 * [FontAwesome](https://fontawesome.com/)
-    * I also used three social media icons for Twitter, Instagram and Facebook
+    * I also used two social media icons for Instagram and Facebook
 
 
 **Resources**
@@ -292,46 +292,33 @@ python3 app.py
 
 You can find both the source of this information and learn more about the process with the following link: [Cloning a Repository](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
 
-### Deploying Remote - Code Institute Milestone 3 project to Heroku 
+### Remote - Code Institute Milestone 3 - deploying project to Heroku 
 
 To deploy the project to Heroku, I firstly ensured I had created a new repository within GitHub, and then I did the following:
 
-1. I created a Heroku account, signed in and created a new app with a unique name that had not already been taken (this project uses 'ms3-move-on'). I then set the region to the closest to me: 'Europe'.
-2. With the app created, I went to the 'Settings' tab and clicked the 'Reveal Config Variables' button. From here, I input the following values:
-```
-MONGO_URI: mongodb+srv://<username>:<password>@<cluster_name>-ocous.mongodb.net/<database_name>?retryWrites=true&w=majority
-IP: 0.0.0.0
-PORT: 5000
-```
-(Note: within the MONGO_URI value, I replaced the 'username','password', 'cluster_name' and 'database_name' with my specific database values. They are kept private for security reasons.)
-
-
-3. In Gitpod, I created a requirements.txt file:
+1. In Gitpod, I created a requirements.txt file:
 ```
 pip3 freeze --local > requirements.txt
 ```
-4. Next, I created a Procfile and then ensured that there was no extra line after the first line as this can confuse Heroku:
+2. Next, I created a Procfile and then ensured that there was no extra line after the first line as this can confuse Heroku:
 ```
 echo web: python app.py > Procfile
 ```
-5. I then pushed these new files to GitHub with the following:
-```
-git add
-git commit -m 
-```
-6. I then logged in to Heroku, and selected 'Created new app', I then gave the app a unique name and selected my closest region.
+3. I then pushed these new files to GitHub.
 
-7. Within the 'Deployment Method' section of Heroku, I linked to my GitHub profile and repo name and clicked on 'Connect'.
+4. I then logged in to Heroku, and selected 'Created new app', I then gave the app a unique name and selected my closest region.
 
-8. I then selected "Reveal Config Vars" in the 'Settings' section, and added the relevant key/value information from the my env.py (IP, PORT, MONGO_URI, MONGO_DBNAME, SECRET_KEY) file making sure that there were not quotation marks used.
+5. Within the 'Deployment Method' section of Heroku, I linked to my GitHub profile and repo name and clicked on 'Connect'.
 
-9. Selected "Deploy" from the Heroku App menu and scrolled down the page and selected "Enable Automatic Deployment".
+6. I then selected "Reveal Config Vars" in the 'Settings' section, and added the relevant key/value information from the my env.py (IP, PORT, MONGO_URI, MONGO_DBNAME, SECRET_KEY) file making sure that there were not quotation marks used.
 
-10. Selected Master Branch under "Branch Selected" and clicked "Deploy Branch".
+7. Selected "Deploy" from the Heroku App menu and scrolled down the page and selected "Enable Automatic Deployment".
 
-11. Once site was deployed, clicked "View" to launch the app and be able to view it within the browser.
+8. Selected Master Branch under "Branch Selected" and clicked "Deploy Branch".
 
-12. This completed the process of deploying the project to Heroku. Once deployed, I continued to push all changes made to the project to Heroku throughout the rest of the development process.
+9. Once site was deployed, clicked "View" to launch the app and be able to view it within the browser.
+
+10. This completed the process of deploying the project to Heroku. Once deployed, I continued to push all changes made to the project to Heroku throughout the rest of the development process.
 
 ## Credits
 
