@@ -18,6 +18,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+
 # Route to index page as default
 @app.route("/")
 @app.route("/index")
@@ -29,16 +30,16 @@ def index():
 @app.route("/sign_up", methods=["GET", "POST"])
 def sign_up():
     if request.method == "POST":
-        # check if username already exists 
+        # Check if username already exists 
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
         if existing_user:
             flash(
-            "Oops, that username already exists!" +
-            "Please try again with a different username"
-            )
-            return redirect(url_for("sign_up"))
+                 "Oops, that username already exists!" +
+                 " Please try again with a different username"
+                  )
+        return redirect(url_for("sign_up"))
 
         sign_up = {
             "username": request.form.get("username").lower(),
@@ -66,12 +67,12 @@ def log_in():
         if existing_user:
             # ensure hashed password matches user input
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Welcome, {}".format(
+                    existing_user["password"], request.form.get("password")):
+                        session["user"] = request.form.get("username").lower()
+                        flash("Welcome, {}".format(
                             request.form.get("username")))
-                    return redirect(url_for(
-                        "my_tips", username=session["user"]))
+                        return redirect(url_for(
+                            "my_tips", username=session["user"]))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
@@ -104,7 +105,7 @@ def tips():
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
-    #tips = list(mongo.db.tips.find({"$text": {"$search": query}}))
+    # tips = list(mongo.db.tips.find({"$text": {"$search": query}}))
     query_string = {'$regex': ".*{0}.*".format(query), '$options': 'i'}
     tips = list(mongo.db.tips.find({
         "$or": [
@@ -131,7 +132,10 @@ def add_tip():
             "created_by": session["user"]
         }
         mongo.db.tips.insert_one(tip)
-        flash("Thank you...your working from home tip has now been added to our community board below!")
+        flash(
+              "Thank you...your working from home tip has" +
+              "now been added to our community board below!"
+              )
         return redirect(url_for("tips"))
 
     categories = mongo.db.categories.find().sort("category_name", 1)
