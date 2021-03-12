@@ -35,11 +35,8 @@ def sign_up():
             {"username": request.form.get("username").lower()})
 
         if existing_user:
-            flash(
-                 "Oops, that username already exists!" +
-                 " Please try again with a different username"
-                  )
-        return redirect(url_for("sign_up"))
+            flash("Username already exists")
+            return redirect(url_for("sign_up"))
 
         sign_up = {
             "username": request.form.get("username").lower(),
