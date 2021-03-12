@@ -253,9 +253,9 @@ Testing documentation can be found on a separate document [here](https://github.
 
 ## Deployment
 
-This project was developed using Gitpod and deployed on Heroku: [Remote: View Live Website] http://ms3-remote-app.herokuapp.com/index/)
+This project was developed using Gitpod and deployed on Heroku: [Remote: View Live Website] (http://ms3-remote-app.herokuapp.com/index)
 
-The GitHub repository for the project can be viewed with the following link: [Remote: GitHub Repository]( https://github.com/chloelewisdev/milestone-project-3
+The GitHub repository for the project can be viewed with the following link: [Remote: GitHub Repository](https://github.com/chloelewisdev/milestone-project-3)
 
 The Code Institute Mini Project (Task Manager) outlined the steps to be taken for deployment and were used to deploy this project.
 
